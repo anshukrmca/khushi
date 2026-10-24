@@ -413,19 +413,103 @@ Hamesha tumhari khushi ki dua karne wala. ❤️`,
   modalBackdrop.addEventListener('click', closePhotoModal);
 
   // ==========================================================================
-  // 7. A LETTER FOR YOU (3D ENVELOPE)
+  // 7. A LETTER FOR YOU (UPGRADED COMPACT ENVELOPE & 3-PAGE BOOKLET)
   // ==========================================================================
 
   const envelopeBox = document.getElementById('envelopeBox');
   const waxSeal = document.getElementById('waxSeal');
   const foldLetterBtn = document.getElementById('foldLetterBtn');
+  const letterSheet = document.getElementById('letterSheet');
   const editLetterBtn = document.getElementById('editLetterBtn');
 
+  const letterBooklet = document.getElementById('letterBooklet');
+  const letterPageBadge = document.getElementById('letterPageBadge');
+  const letterPageText = document.getElementById('letterPageText');
+  const letterPrevPageBtn = document.getElementById('letterPrevPageBtn');
+  const letterNextPageBtn = document.getElementById('letterNextPageBtn');
+  const letterModeToggleBtn = document.getElementById('letterModeToggleBtn');
+  const letterBookletNav = document.getElementById('letterBookletNav');
+  const letterPages = document.querySelectorAll('.letter-page');
+  const letterDots = document.querySelectorAll('.p-dot');
+
+  let currentLetterPage = 1;
+  const totalLetterPages = 3;
+  const pageTitles = {
+    1: 'Part 1 of 3 • दिल की बात',
+    2: 'Part 2 of 3 • उम्मीद और कोशिश',
+    3: 'Part 3 of 3 • हमेशा सिर्फ तुम्हारा'
+  };
+
+  function updateLetterBookletView(pageNum) {
+    if (pageNum < 1) pageNum = 1;
+    if (pageNum > totalLetterPages) pageNum = totalLetterPages;
+    currentLetterPage = pageNum;
+
+    letterPages.forEach(p => {
+      const pageIndex = parseInt(p.getAttribute('data-page'), 10);
+      if (pageIndex === currentLetterPage) {
+        p.classList.add('active');
+      } else {
+        p.classList.remove('active');
+      }
+    });
+
+    letterDots.forEach(dot => {
+      const dotIndex = parseInt(dot.getAttribute('data-page'), 10);
+      if (dotIndex === currentLetterPage) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    if (letterPageText) {
+      letterPageText.textContent = pageTitles[currentLetterPage] || `Part ${currentLetterPage} of 3`;
+    }
+
+    if (letterPrevPageBtn) {
+      letterPrevPageBtn.disabled = currentLetterPage === 1;
+    }
+
+    if (letterNextPageBtn) {
+      if (currentLetterPage === totalLetterPages) {
+        letterNextPageBtn.textContent = 'Read Again ↺';
+      } else {
+        letterNextPageBtn.textContent = 'Next Page →';
+      }
+    }
+
+    if (letterBooklet) {
+      letterBooklet.scrollTop = 0;
+    }
+  }
+
   function openEnvelope() {
+    if (!envelopeBox) return;
     envelopeBox.classList.add('opened');
+    if (letterSheet) {
+      letterSheet.setAttribute('aria-hidden', 'false');
+    }
+    updateLetterBookletView(1);
     initAudioContext();
     playWarmChime(523.25, 0.05);
-    playWarmChime(659.25, 0.15);
+    playWarmChime(659.25, 0.18);
+  }
+
+  function closeEnvelope() {
+    if (!envelopeBox) return;
+    envelopeBox.classList.remove('opened');
+    if (letterSheet) {
+      letterSheet.setAttribute('aria-hidden', 'true');
+    }
+    if (letterBooklet && letterBooklet.classList.contains('full-scroll-mode')) {
+      letterBooklet.classList.remove('full-scroll-mode');
+      if (letterBookletNav) letterBookletNav.style.display = 'flex';
+      if (letterModeToggleBtn) letterModeToggleBtn.textContent = '📜 View All';
+    }
+    updateLetterBookletView(1);
+    initAudioContext();
+    playWarmChime(440.0, 0.05);
   }
 
   if (waxSeal) {
@@ -438,7 +522,58 @@ Hamesha tumhari khushi ki dua karne wala. ❤️`,
   if (foldLetterBtn) {
     foldLetterBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      envelopeBox.classList.toggle('opened');
+      closeEnvelope();
+    });
+  }
+
+  if (letterPrevPageBtn) {
+    letterPrevPageBtn.addEventListener('click', () => {
+      if (currentLetterPage > 1) {
+        updateLetterBookletView(currentLetterPage - 1);
+        initAudioContext();
+        playWarmChime(493.88, 0.05);
+      }
+    });
+  }
+
+  if (letterNextPageBtn) {
+    letterNextPageBtn.addEventListener('click', () => {
+      if (currentLetterPage < totalLetterPages) {
+        updateLetterBookletView(currentLetterPage + 1);
+        initAudioContext();
+        playWarmChime(587.33, 0.05);
+      } else {
+        updateLetterBookletView(1);
+        initAudioContext();
+        playWarmChime(523.25, 0.05);
+      }
+    });
+  }
+
+  letterDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const targetPage = parseInt(dot.getAttribute('data-page'), 10);
+      if (targetPage) {
+        updateLetterBookletView(targetPage);
+        initAudioContext();
+        playWarmChime(550.0, 0.05);
+      }
+    });
+  });
+
+  if (letterModeToggleBtn) {
+    letterModeToggleBtn.addEventListener('click', () => {
+      if (!letterBooklet) return;
+      const isFull = letterBooklet.classList.toggle('full-scroll-mode');
+      if (isFull) {
+        letterModeToggleBtn.textContent = '📖 Paged View';
+        if (letterBookletNav) letterBookletNav.style.display = 'none';
+        if (letterPageText) letterPageText.textContent = 'Complete Letter • पूरा पत्र';
+      } else {
+        letterModeToggleBtn.textContent = '📜 View All';
+        if (letterBookletNav) letterBookletNav.style.display = 'flex';
+        updateLetterBookletView(currentLetterPage);
+      }
     });
   }
 
@@ -656,8 +791,11 @@ Hamesha tumhari khushi ki dua karne wala. ❤️`,
     document.getElementById('letterSalutation').textContent = `${siteData.herName} ❤️🥺`;
     document.getElementById('letterAuthor').textContent = siteData.authorName;
 
-    const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
-    document.getElementById('letterBodyContent').innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
+    const letterBodyEl = document.getElementById('letterBodyContent');
+    if (letterBodyEl) {
+      const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
+      letterBodyEl.innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
+    }
 
     closePersonalizeModal();
     alert('Changes saved successfully! 💖');
@@ -671,8 +809,11 @@ Hamesha tumhari khushi ki dua karne wala. ❤️`,
       
       document.getElementById('letterSalutation').textContent = `Khushi ❤️🥺`;
       document.getElementById('letterAuthor').textContent = siteData.authorName;
-      const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
-      document.getElementById('letterBodyContent').innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
+      const letterBodyEl = document.getElementById('letterBodyContent');
+      if (letterBodyEl) {
+        const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
+        letterBodyEl.innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
+      }
 
       closePersonalizeModal();
     }
