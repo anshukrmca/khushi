@@ -1,163 +1,144 @@
 /**
- * FOR KHUSHI, WITH LOVE ♡
- * Main Interactive Application Script with Hindi Poetry & Cute Panda Animations
+ * FOR MY KHUSHI ♡ — INTERACTIVE JAVASCRIPT MASTER
+ * Matches Reference Mockup with Video Reel, Moments Filter, and Anshu's Heartfelt Letter
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // 1. DATA STATE & LOCAL STORAGE PERSISTENCE
+  // 1. DATA STATE (WITH ANSHU'S HEARTFELT NOTE FOR KHUSHI)
   // ==========================================================================
 
   const DEFAULT_DATA = {
-    version: '2.0', // Version bump to ensure new Hindi text & user photos load
     herName: 'Khushi',
-    authorName: 'With all my love & heart ♡',
-    letterContent: `अगर तुम यह खत पढ़ रही हो, तो एक गहरी और सुकून भरी सांस लो और जान लो कि तुम इस दुनिया में मेरे लिए सबसे ज्यादा अनमोल और खास हो।
+    authorName: '— Tumhara Anshu 💌',
+    letterContent: `Pata nahi main apne dil ki baat tumhe kitni achhe se samjha paunga, lekin aaj main tumse kuch kehna chahta hoon, bilkul dil se.
 
-जिस दिन से तुम मेरी जिंदगी में आई हो, हर सुबह और हसीन लगने लगी है। तुम्हारी वो प्यारी सी हंसी, तुम्हारी वो मासूम बातें और जिस तरह तुम मेरा ख्याल रखती हो—वो मेरे दिल को एक ऐसा सुकून देता है जो लफ्जों में कभी बयां नहीं हो सकता।
+Mujhe pata hai ki sirf “I love you” keh dene se sab kuch theek nahi ho jaata. Relationship mein pyaar ke saath trust, understanding, respect aur efforts bhi zaroori hote hain. Agar meri kisi baat ya mere kisi action se tumhe hurt hua hai, toh mujhe sach mein afsos hai. Main tumhari feelings ko samajhna chahta hoon, na ki unhe galat prove karna.
 
-जब भी जिंदगी में कोई परेशानी या थकावट होती है, तुम्हारा एक बार प्यार से देख लेना या मुस्कुरा देना मेरी सारी तकलीफें मिटा देता है। तुम सिर्फ मेरी मोहब्बत नहीं हो, तुम मेरा सबसे महफूज घर (safe haven) हो।
+Khushi, tum mere liye sirf ek person nahi ho jisse main pyaar karta hoon. Tumhare saath judi chhoti-chhoti baatein, tumhari smile, humari conversations aur humare moments mere liye bahut special hain. ❤️
 
-शुक्रिया मेरी जिंदगी को खुशियों से भरने के लिए, मुझे समझने के लिए, और मेरे साथ हर पल मुस्कुराने के लिए। मैं वादा करता हूँ कि आने वाले हर दिन, हर मौसम में तुम्हारा हाथ ऐसे ही थामे रखूँगा और तुम्हें दुनिया का सबसे खुश इंसान बनाऊँगा।`,
-    memories: [
-      {
-        src: 'assets/images/IMG_2495.png',
-        tag: '🎨 हमारी प्यारी कार्टून दुनिया • Dream Cafe',
-        title: 'लाल टेबल और ढेर सारी मीठी बातें',
-        text: 'सामने तुम बैठी हो, चेहरे पर वो प्यारी सी मुस्कान... इस कार्टून जैसी जादुई दुनिया में भी और असली जिंदगी में भी, तुम ही मेरी सबसे पसंदीदा साथी हो।',
-        date: 'Two hearts, infinite smiles ♡'
-      },
-      {
-        src: 'assets/images/ac279f4b-f24b-419d-b2a8-31da8d25d9c9.jpeg',
-        tag: '💛 मेरी खिली हुई धूप • Radiant Sunshine',
-        title: 'पीले लिबास में तुम्हारी वो मासूम अदा',
-        text: 'जब तुम इस तरह मुस्कुराती हो, तो जैसे चारों तरफ फूल खिल जाते हैं। तुम्हारी सादगी और नूर के आगे पूरी दुनिया की खूबसूरती फीकी है।',
-        date: 'Suraj ki pehli kiran jaisi ♡'
-      },
-      {
-        src: 'assets/images/IMG_1822.jpeg',
-        tag: '🌹 सादगी और नजाकत • Pure Grace',
-        title: 'साड़ी में तुम्हारा वो दिलकश अंदाज',
-        text: 'तुम्हारी ये तस्वीर जब भी देखता हूँ, दिल की धड़कनें तेज हो जाती हैं। तुम्हारी सादगी में ही वो जादू है जो हर पल मुझे तुम्हारा दीवाना बना देता है।',
-        date: 'Kudrat ka sabse haseen tohfa ♡'
-      },
-      {
-        src: 'assets/images/IMG_1664.png',
-        tag: '📱 दो स्क्रीन, एक धड़कन • Linked Hearts',
-        title: 'स्क्रीन पर भी और दिल में भी सिर्फ तुम',
-        text: 'फोन की स्क्रीन अनलॉक हो या दिन का कोई भी पल, तुम्हारी तस्वीर देखते ही चेहरे पर एक सुकून भरी मुस्कान आ जाती है। हम हमेशा साथ हैं।',
-        date: 'Always by each other\'s side ♡'
-      }
-    ],
+Main yeh nahi kehta ki humare beech kabhi problems nahi aayengi, ya main hamesha perfect rahunga. Lekin main itna zaroor chahta hoon ki agar tumhare dil mein ab bhi humare rishte ke liye thodi si bhi jagah hai, toh hum ek baar phir se ek-dusre ko samajhne ki koshish karein.
+
+Main sirf tumhe wapas paane ke liye promises nahi karna chahta. Main apne actions se dikhana chahta hoon ki main kahan better ho sakta hoon aur humare relationship ko kaise aur healthy bana sakta hoon.
+
+Main tumse ek aur chance maang raha hoon, koi majboori nahi bana raha. Main chahta hoon ki agar hum dobara shuru karein, toh woh tumhari khushi, tumhari marzi aur hum dono ke trust ke saath ho.
+
+Tumhe agar time chahiye, toh main uski respect karunga. Main bas chahta tha ki tum ek baar mere dil ki baat suno. 🥺💗
+
+I still choose you, Khushi. Isliye nahi ki humara past perfect tha, balki isliye ki mere dil mein aaj bhi humare future ko behtar banane ki umeed hai.
+
+Agar tum bhi chaho, toh kya hum ek baar phir se, dheere-dheere, ek nayi understanding ke saath shuru kar sakte hain?
+
+Hamesha tumhari khushi ki dua karne wala. ❤️`,
     reasons: [
       {
         icon: '🌸',
-        title: 'तेरी वो जादुई मुस्कान (The Magic In Your Smile)',
-        desc: 'तुम्हारी एक सच्ची मुस्कान मेरे दिनभर की सारी थकान और उदासी को एक पल में मिटा देती है। तुम्हारी हंसी ही मेरा सबसे पसंदीदा सुकून है।',
-        tag: '#मेरीपसंदीदामुस्कान'
+        title: 'You Care • तेरी बेपनाह परवाह',
+        desc: 'The way you care about me, our dreams, and all the little details in life means everything. Your pure heart makes you completely irreplaceable.',
+        img: 'assets/images/image-1.png',
+        tag: '#MyFavoriteCare ♡'
       },
       {
-        icon: '🕊️',
-        title: 'तेरा मासूम और खूबसूरत दिल (Purest Soul)',
-        desc: 'जिस मासूमियत और अपनत्व से तुम सबका ख्याल रखती हो, वो मुझे हर दिन एक बेहतर इंसान बनने की प्रेरणा देता है।',
-        tag: '#नेकऔरमासूमदिल'
+        icon: '💛',
+        title: 'Your Smile • तेरी खिली हुई धूप',
+        desc: 'The genuine warmth in your smile lights up even the darkest days. Seeing you truly happy is my favorite reward in the entire universe.',
+        img: 'assets/images/image-3.png',
+        tag: '#PureSunshine ♡'
       },
       {
         icon: '☕',
-        title: 'तेरे साथ हर खामोशी भी मीठी है (Comfort in Silence)',
-        desc: 'हमें बात करने की भी जरूरत नहीं पड़ती। बस तुम्हारा मेरे पास बैठे होना ही पूरी दुनिया की सबसे बड़ी दौलत लगता है।',
-        tag: '#रूहकासुकून'
+        title: 'Comfort in Silence • रूह का सुकून',
+        desc: 'We do not even need words. Just sitting right beside you, holding your hand, feels richer than anything else in the world.',
+        img: 'assets/images/image-2.png',
+        tag: '#MyPeacefulPlace ♡'
+      },
+      {
+        icon: '🌅',
+        title: 'Shared Horizons • हर सफर में साथ',
+        desc: 'Looking towards the future, knowing you are standing by my side, turns every dream into an exciting adventure.',
+        img: 'assets/images/image-4.png',
+        tag: '#GoldenHorizon ♡'
       },
       {
         icon: '🎶',
-        title: 'तेरी वो खिलखिलाती हंसी (Unfiltered Laughter)',
-        desc: 'जब तुम किसी बात पर खुलकर हंसती हो, वो खिलखिलाहट मेरे कानों के लिए दुनिया का सबसे खूबसूरत संगीत बन जाती है।',
-        tag: '#कानोंमेंमिसरी'
+        title: 'Your Sweet Laugh • कानों में मिसरी',
+        desc: 'That cute, uncontrolled giggle you do when something is hilarious is the absolute sweetest melody on earth.',
+        img: 'assets/images/image-1.png',
+        tag: '#SweetestSound ♡'
       },
       {
         icon: '✨',
-        title: 'तेरा मुझ पर अटूट भरोसा (Your Faith In Me)',
-        desc: 'जब कभी मैं खुद पर शक करता हूँ, तुम्हारी आँखों का विश्वास मुझे हर मुश्किल से लड़ने की ताकत देता है।',
-        tag: '#मेरीहिम्मत'
+        title: 'How You Believe In Me • मेरी हिम्मत',
+        desc: 'When self-doubt creeps in, the gentle faith you have in me gives me the courage to conquer whatever lies ahead.',
+        img: 'assets/images/image-5.png',
+        tag: '#MyGreatestStrength ♡'
       },
       {
         icon: '💫',
-        title: 'आम दिनों को खास बना देना (Everyday Magic)',
-        desc: 'रास्ते की सैर हो या एक कप चाय, तुम्हारे साथ बिताया हर एक छोटा सा लम्हा जिंदगी भर की खूबसूरत याद बन जाता है।',
-        tag: '#जादुईलम्हे'
-      },
-      {
-        icon: '🌙',
-        title: 'मेरा सबसे महफूज ठिकाना (My Safe Harbor)',
-        desc: 'बाहर की दुनिया चाहे कितनी भी शोर भरी क्यों न हो, तुम्हारे पास आते ही मेरा दिल पूरी तरह शांत और महफूज महसूस करता है।',
-        tag: '#सुकूनकाशहर'
+        title: 'Everyday Magic • जादुई लम्हे',
+        desc: 'A simple car ride, sharing snacks, or walking under the evening breeze—everything turns memorable with you.',
+        img: 'assets/images/image-6.png',
+        tag: '#MagicInTheSimple ♡'
       },
       {
         icon: '🧸',
-        title: 'तेरी प्यारी-प्यारी आदतें और नखरे (Adorable Quirks)',
-        desc: 'तुम्हारे बोलने का वो प्यारा अंदाज, वो छोटी-छोटी बातों पर मचलना और मुंह बनाना—तुम हर अंदाज में बेहद क्यूट हो।',
-        tag: '#क्यूटपांडा'
+        title: 'Adorable Quirks • तेरी नटखट अदाएं',
+        desc: 'The cute faces you make, your little expressions, and the funny ways you show excitement are so uniquely you.',
+        img: 'assets/images/image-3.png',
+        tag: '#EndlesslyCute ♡'
       },
       {
-        icon: '💌',
-        title: 'तेरा बेपनाह ख्याल रखना (The Way You Care)',
-        desc: 'खाना खाया या नहीं पूछना, तबियत का ख्याल रखना और वो छोटी-छोटी बातें नोटिस करना जो कोई और कभी नहीं देखता।',
-        tag: '#अनमोलपरवाह'
+        icon: '🌙',
+        title: 'My Safe Haven • महफूज ठिकाना',
+        desc: 'No matter how chaotic the outside world gets, with you I feel deeply understood, safe, and loved beyond measure.',
+        img: 'assets/images/image-2.png',
+        tag: '#MySafeHarbor ♡'
       },
       {
         icon: '💖',
-        title: 'क्योंकि तुम सिर्फ तुम हो - मेरी खुशी (My One & Only)',
-        desc: '8 अरब लोगों में से सिर्फ एक तुम हो। तुम जैसी न कोई थी, न कोई होगी। तुम मेरी जिंदगी का सबसे अनमोल तोहफा हो खुशी।',
-        tag: '#मेरीपूरीकायनात'
+        title: 'I Still Choose You • सिर्फ तुम',
+        desc: 'Out of 8 billion people, there is only one Khushi. Aaj bhi mere dil mein humare future ko behtar banane ki umeed hai. Hamesha sirf tum.',
+        img: 'assets/images/image-4.png',
+        tag: '#IStillChooseYou ♡'
       }
     ]
   };
 
-  // Check version to ensure new Hindi text & user's memory photos load
-  let siteData = JSON.parse(localStorage.getItem('khushi_site_data') || 'null');
-  if (!siteData || siteData.version !== DEFAULT_DATA.version) {
-    siteData = JSON.parse(JSON.stringify(DEFAULT_DATA));
-    saveSiteData();
-  }
-
-  function saveSiteData() {
-    localStorage.setItem('khushi_site_data', JSON.stringify(siteData));
-  }
+  let siteData = DEFAULT_DATA;
 
   // ==========================================================================
-  // 2. CUTE FLOATING PANDA WIDGET WITH HINDI SPEECH BUBBLE
+  // 2. CUTE FLOATING PANDA WIDGET
   // ==========================================================================
 
   const floatingPanda = document.getElementById('floatingPanda');
   const pandaBubble = document.getElementById('pandaBubble');
   const hindiQuotes = [
-    'खुशी, तुम मेरी सबसे प्यारी मुस्कान हो! 💖',
-    'जैसे पांडा को बाम्बू, वैसे मुझे तुम पसंद हो! 🐼',
-    'तुम्हारी हंसी = मेरा पूरा दिन बन गया! 🌸',
+    'Khushi ❤️ I still choose you! 🥺',
+    'जैसे पांडा को बाम्बू, वैसे मुझे सिर्फ तुम पसंद हो! 🐼',
+    'तुम्हारी मुस्कान मेरे लिए सबसे अनमोल है! 🌸',
     'हाथ थामे रखना हमेशा, छोड़ना मत! 🤝',
     'लाखों में एक नहीं, तुम मेरी पूरी दुनिया हो! 💫',
-    'आई लव यू सो मच, मेरी क्यूट खुशी! 🐾✨'
+    'Hamesha tumhari khushi ki dua karne wala — Anshu 💌'
   ];
   let quoteIndex = 0;
 
   if (floatingPanda && pandaBubble) {
-    floatingPanda.addEventListener('click', (e) => {
+    floatingPanda.addEventListener('click', () => {
       quoteIndex = (quoteIndex + 1) % hindiQuotes.length;
       pandaBubble.innerHTML = `<span>${hindiQuotes[quoteIndex]}</span>`;
       
-      // Spawn heart burst around the panda
       const rect = floatingPanda.getBoundingClientRect();
       spawnClickBurst(rect.left + 35, rect.top + 35);
-      
+
       initAudioContext();
-      playWarmChime(659.25, 0.05); // High cute bell
+      playWarmChime(659.25, 0.05);
       playWarmChime(783.99, 0.15);
     });
   }
 
   // ==========================================================================
-  // 3. FLOATING PETALS & PARTICLES CANVAS
+  // 3. FLOATING PETALS CANVAS
   // ==========================================================================
 
   const canvas = document.getElementById('particles-canvas');
@@ -171,12 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const particles = [];
-  const PARTICLE_COUNT = 38;
   const colors = [
-    'rgba(255, 182, 193, 0.7)',
+    'rgba(255, 182, 193, 0.75)',
     'rgba(251, 113, 139, 0.65)',
     'rgba(254, 205, 214, 0.8)',
-    'rgba(255, 228, 230, 0.75)',
+    'rgba(255, 228, 230, 0.7)',
     'rgba(244, 63, 104, 0.5)'
   ];
 
@@ -188,14 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
     reset(initial = false) {
       this.x = Math.random() * width;
       this.y = initial ? Math.random() * height : -20;
-      this.size = Math.random() * 12 + 8;
-      this.speedY = Math.random() * 0.9 + 0.4;
-      this.speedX = Math.random() * 0.8 - 0.4;
+      this.size = Math.random() * 11 + 7;
+      this.speedY = Math.random() * 0.85 + 0.4;
+      this.speedX = Math.random() * 0.7 - 0.35;
       this.rotation = Math.random() * 360;
-      this.rotationSpeed = Math.random() * 1.5 - 0.75;
+      this.rotationSpeed = Math.random() * 1.4 - 0.7;
       this.color = colors[Math.floor(Math.random() * colors.length)];
       this.type = Math.random() > 0.4 ? 'petal' : 'heart';
-      this.opacity = Math.random() * 0.6 + 0.3;
+      this.opacity = Math.random() * 0.6 + 0.35;
     }
 
     update() {
@@ -231,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
+  for (let i = 0; i < 35; i++) {
     particles.push(new RomanticParticle());
   }
 
@@ -244,12 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animateParticles);
   }
   animateParticles();
-
-  // Burst hearts on click
-  window.addEventListener('click', (e) => {
-    if (['INPUT', 'TEXTAREA', 'BUTTON'].includes(e.target.tagName)) return;
-    spawnClickBurst(e.clientX, e.clientY);
-  });
 
   function spawnClickBurst(x, y) {
     for (let i = 0; i < 7; i++) {
@@ -265,19 +239,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  window.addEventListener('click', (e) => {
+    if (['INPUT', 'TEXTAREA', 'BUTTON', 'A', 'VIDEO'].includes(e.target.tagName)) return;
+    spawnClickBurst(e.clientX, e.clientY);
+  });
+
   // ==========================================================================
-  // 4. ROMANTIC SYNTHESIZER AUDIO (WEB AUDIO API + MP3 UPLOAD)
+  // 4. ROMANTIC MUSIC PLAYER (SYNTHESIZER)
   // ==========================================================================
 
   let audioCtx = null;
   let isPlaying = false;
   let synthInterval = null;
-  let customAudio = null;
 
   const musicToggleBtn = document.getElementById('musicToggleBtn');
   const musicLabel = document.getElementById('musicLabel');
-  const musicDropdown = document.getElementById('musicDropdown');
-  const customAudioInput = document.getElementById('customAudioInput');
 
   const chordNotes = [
     [261.63, 329.63, 392.00, 493.88], // Cmaj7
@@ -306,10 +282,10 @@ document.addEventListener('DOMContentLoaded', () => {
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
 
     filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(900, audioCtx.currentTime + delay);
+    filter.frequency.setValueAtTime(850, audioCtx.currentTime + delay);
 
     gain.gain.setValueAtTime(0.001, audioCtx.currentTime + delay);
-    gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + delay + 0.1);
+    gain.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + delay + 0.1);
     gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + delay + 2.8);
 
     osc.connect(filter);
@@ -332,92 +308,75 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function toggleMusic() {
-    if (customAudio && customAudio.src) {
-      if (customAudio.paused) {
-        customAudio.play();
-        setMusicPlayingState(true);
-      } else {
-        customAudio.pause();
-        setMusicPlayingState(false);
-      }
-      return;
-    }
-
     initAudioContext();
     if (!isPlaying) {
       playRomanticChord();
       synthInterval = setInterval(playRomanticChord, 3600);
-      setMusicPlayingState(true);
+      isPlaying = true;
+      musicToggleBtn.classList.add('playing');
+      musicLabel.textContent = 'Pause';
     } else {
       if (synthInterval) clearInterval(synthInterval);
-      setMusicPlayingState(false);
-    }
-  }
-
-  function setMusicPlayingState(playing) {
-    isPlaying = playing;
-    if (playing) {
-      musicToggleBtn.classList.add('playing');
-      musicLabel.textContent = 'Pause Music';
-    } else {
+      isPlaying = false;
       musicToggleBtn.classList.remove('playing');
-      musicLabel.textContent = 'Play Music';
+      musicLabel.textContent = 'Music';
     }
   }
 
   musicToggleBtn.addEventListener('click', toggleMusic);
 
-  musicToggleBtn.addEventListener('contextmenu', (e) => {
-    e.preventDefault();
-    musicDropdown.classList.toggle('show');
-  });
+  // ==========================================================================
+  // 5. VIDEO REEL CONTROLS
+  // ==========================================================================
 
-  customAudioInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      if (synthInterval) clearInterval(synthInterval);
-      if (!customAudio) customAudio = new Audio();
-      customAudio.src = URL.createObjectURL(file);
-      customAudio.loop = true;
-      customAudio.play().then(() => {
-        setMusicPlayingState(true);
-        musicDropdown.classList.remove('show');
+  const reelVideo = document.getElementById('romanticReelVideo');
+  const reelPlayBtn = document.getElementById('reelPlayBtn');
+
+  if (reelVideo && reelPlayBtn) {
+    reelPlayBtn.addEventListener('click', () => {
+      if (reelVideo.paused) {
+        reelVideo.play();
+        reelPlayBtn.textContent = '⏸ Pause Reel';
+      } else {
+        reelVideo.pause();
+        reelPlayBtn.textContent = '▶ Play Reel';
+      }
+    });
+
+    reelVideo.addEventListener('play', () => {
+      reelPlayBtn.textContent = '⏸ Pause Reel';
+    });
+    reelVideo.addEventListener('pause', () => {
+      reelPlayBtn.textContent = '▶ Play Reel';
+    });
+  }
+
+  // ==========================================================================
+  // 6. MOMENTS CATEGORY FILTER
+  // ==========================================================================
+
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const momentCards = document.querySelectorAll('.moment-card');
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filter = pill.getAttribute('data-filter');
+
+      momentCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
       });
-    }
-  });
-
-  // ==========================================================================
-  // 5. ACTIVE SECTION TRACKER & NAVIGATION DOTS
-  // ==========================================================================
-
-  const sections = document.querySelectorAll('section');
-  const navDots = document.querySelectorAll('.nav-dot');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 200;
-
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const height = sec.offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
-        current = sec.getAttribute('id');
-      }
-    });
-
-    navDots.forEach(dot => {
-      dot.classList.remove('active');
-      if (dot.getAttribute('href') === `#${current}`) {
-        dot.classList.add('active');
-      }
     });
   });
 
-  // ==========================================================================
-  // 6. POLAROID GALLERY & LIGHTBOX MODAL
-  // ==========================================================================
-
-  const memoryCards = document.querySelectorAll('.polaroid-card');
+  // Lightbox for moments
   const photoModal = document.getElementById('photoModal');
   const modalImg = document.getElementById('modalImg');
   const modalTitle = document.getElementById('modalTitle');
@@ -426,13 +385,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalBackdrop = document.getElementById('modalBackdrop');
 
-  function openPhotoModal(index) {
-    const memory = siteData.memories[index] || siteData.memories[0];
-    modalImg.src = memory.src;
-    modalImg.alt = memory.title;
-    modalTitle.textContent = memory.title;
-    modalDesc.textContent = memory.text;
-    modalDate.textContent = memory.date;
+  function openPhotoModal(src, title, desc, date) {
+    modalImg.src = src;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalDate.textContent = date;
     photoModal.hidden = false;
     document.body.style.overflow = 'hidden';
   }
@@ -442,13 +399,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  memoryCards.forEach((card, idx) => {
-    card.addEventListener('click', () => openPhotoModal(idx));
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openPhotoModal(idx);
-      }
+  momentCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.getAttribute('data-src');
+      const title = card.getAttribute('data-title');
+      const desc = card.getAttribute('data-desc');
+      const date = card.getAttribute('data-date');
+      openPhotoModal(src, title, desc, date);
     });
   });
 
@@ -456,114 +413,125 @@ document.addEventListener('DOMContentLoaded', () => {
   modalBackdrop.addEventListener('click', closePhotoModal);
 
   // ==========================================================================
-  // 7. INTERACTIVE 3D ENVELOPE & LOVE LETTER
+  // 7. A LETTER FOR YOU (3D ENVELOPE)
   // ==========================================================================
 
   const envelopeBox = document.getElementById('envelopeBox');
   const waxSeal = document.getElementById('waxSeal');
   const foldLetterBtn = document.getElementById('foldLetterBtn');
-  const letterGreeting = document.getElementById('letterSalutation');
-  const letterBodyContent = document.getElementById('letterBodyContent');
-  const letterAuthor = document.getElementById('letterAuthor');
+  const editLetterBtn = document.getElementById('editLetterBtn');
 
-  function updateLetterDOM() {
-    letterGreeting.textContent = `My Dearest ${siteData.herName}, मेरी प्यारी खुशी,`;
-    letterAuthor.textContent = siteData.authorName;
-
-    const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
-    letterBodyContent.innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
-  }
-  updateLetterDOM();
-
-  waxSeal.addEventListener('click', (e) => {
-    e.stopPropagation();
-    openLetter();
-  });
-
-  envelopeBox.addEventListener('click', (e) => {
-    if (!envelopeBox.classList.contains('opened')) {
-      openLetter();
-    }
-  });
-
-  function openLetter() {
+  function openEnvelope() {
     envelopeBox.classList.add('opened');
     initAudioContext();
-    playWarmChime(523.25, 0.05); // C5
-    playWarmChime(659.25, 0.15); // E5
+    playWarmChime(523.25, 0.05);
+    playWarmChime(659.25, 0.15);
   }
 
-  foldLetterBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    envelopeBox.classList.remove('opened');
-  });
+  if (waxSeal) {
+    waxSeal.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openEnvelope();
+    });
+  }
+
+  if (foldLetterBtn) {
+    foldLetterBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      envelopeBox.classList.toggle('opened');
+    });
+  }
 
   // ==========================================================================
-  // 8. REASONS WHY I LOVE YOU DECK & CAROUSEL
+  // 8. REASONS WHY MY HEART CHOSE YOU (3-CARD PANORAMA)
   // ==========================================================================
 
-  let currentReasonIndex = 0;
-  const reasonCard = document.getElementById('reasonActiveCard');
-  const reasonIcon = document.getElementById('reasonIcon');
+  let currentReasonIdx = 0;
+  const reasonsList = siteData.reasons;
+
+  const reasonCounterText = document.getElementById('reasonCounterText');
+  const reasonProgressFill = document.getElementById('reasonProgressFill');
   const reasonBadge = document.getElementById('reasonBadge');
+  const reasonIcon = document.getElementById('reasonIcon');
+  const activeReasonImg = document.getElementById('activeReasonImg');
   const reasonTitle = document.getElementById('reasonTitle');
   const reasonDesc = document.getElementById('reasonDescription');
   const reasonTag = document.getElementById('reasonTag');
-  const reasonCounterText = document.getElementById('reasonCounterText');
-  const reasonProgressFill = document.getElementById('reasonProgressFill');
 
-  const nextReasonBtn = document.getElementById('nextReasonBtn');
+  const prevCardPreview = document.getElementById('prevCardPreview');
+  const prevCardImg = document.getElementById('prevCardImg');
+  const prevCardTitle = document.getElementById('prevCardTitle');
+
+  const nextCardPreview = document.getElementById('nextCardPreview');
+  const nextCardImg = document.getElementById('nextCardImg');
+  const nextCardTitle = document.getElementById('nextCardTitle');
+
   const prevReasonBtn = document.getElementById('prevReasonBtn');
+  const nextReasonBtn = document.getElementById('nextReasonBtn');
   const shuffleReasonBtn = document.getElementById('shuffleReasonBtn');
   const viewAllReasonsBtn = document.getElementById('viewAllReasonsBtn');
 
-  function renderReason(index) {
-    const list = siteData.reasons;
-    const item = list[index];
+  function updateReasonCard(index) {
+    const total = reasonsList.length;
+    const current = reasonsList[index];
+    const prev = reasonsList[(index - 1 + total) % total];
+    const next = reasonsList[(index + 1) % total];
 
-    reasonCard.classList.add('animating-out');
+    reasonCounterText.textContent = `Reason ${index + 1} of ${total}`;
+    reasonProgressFill.style.width = `${Math.round(((index + 1) / total) * 100)}%`;
 
-    setTimeout(() => {
-      reasonIcon.textContent = item.icon;
-      reasonBadge.textContent = `Reason #${index + 1}`;
-      reasonTitle.textContent = item.title;
-      reasonDesc.textContent = item.desc;
-      reasonTag.textContent = item.tag;
+    reasonBadge.textContent = `Reason #${index + 1}`;
+    reasonIcon.textContent = current.icon;
+    activeReasonImg.src = current.img;
+    activeReasonImg.alt = current.title;
+    reasonTitle.textContent = current.title;
+    reasonDesc.textContent = current.desc;
+    reasonTag.textContent = current.tag;
 
-      reasonCounterText.textContent = `वजह #${index + 1} (Reason ${index + 1} of ${list.length})`;
-      const percentage = Math.round(((index + 1) / list.length) * 100);
-      reasonProgressFill.style.width = `${percentage}%`;
+    prevCardImg.src = prev.img;
+    prevCardTitle.textContent = prev.title.split('•')[0];
 
-      reasonCard.classList.remove('animating-out');
-      reasonCard.classList.add('animating-in');
-
-      setTimeout(() => {
-        reasonCard.classList.remove('animating-in');
-      }, 300);
-    }, 200);
+    nextCardImg.src = next.img;
+    nextCardTitle.textContent = next.title.split('•')[0];
   }
 
+  updateReasonCard(currentReasonIdx);
+
   nextReasonBtn.addEventListener('click', () => {
-    currentReasonIndex = (currentReasonIndex + 1) % siteData.reasons.length;
-    renderReason(currentReasonIndex);
-    if (currentReasonIndex === siteData.reasons.length - 1) {
+    currentReasonIdx = (currentReasonIdx + 1) % reasonsList.length;
+    updateReasonCard(currentReasonIdx);
+    if (currentReasonIdx === reasonsList.length - 1) {
       spawnClickBurst(window.innerWidth / 2, window.innerHeight / 2);
     }
   });
 
   prevReasonBtn.addEventListener('click', () => {
-    currentReasonIndex = (currentReasonIndex - 1 + siteData.reasons.length) % siteData.reasons.length;
-    renderReason(currentReasonIndex);
+    currentReasonIdx = (currentReasonIdx - 1 + reasonsList.length) % reasonsList.length;
+    updateReasonCard(currentReasonIdx);
   });
 
   shuffleReasonBtn.addEventListener('click', () => {
-    let nextIdx;
+    let nextI;
     do {
-      nextIdx = Math.floor(Math.random() * siteData.reasons.length);
-    } while (nextIdx === currentReasonIndex && siteData.reasons.length > 1);
-    currentReasonIndex = nextIdx;
-    renderReason(currentReasonIndex);
+      nextI = Math.floor(Math.random() * reasonsList.length);
+    } while (nextI === currentReasonIdx && reasonsList.length > 1);
+    currentReasonIdx = nextI;
+    updateReasonCard(currentReasonIdx);
   });
+
+  if (prevCardPreview) {
+    prevCardPreview.addEventListener('click', () => {
+      currentReasonIdx = (currentReasonIdx - 1 + reasonsList.length) % reasonsList.length;
+      updateReasonCard(currentReasonIdx);
+    });
+  }
+
+  if (nextCardPreview) {
+    nextCardPreview.addEventListener('click', () => {
+      currentReasonIdx = (currentReasonIdx + 1) % reasonsList.length;
+      updateReasonCard(currentReasonIdx);
+    });
+  }
 
   // All Reasons Modal
   const allReasonsModal = document.getElementById('allReasonsModal');
@@ -572,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const allReasonsList = document.getElementById('allReasonsList');
 
   viewAllReasonsBtn.addEventListener('click', () => {
-    allReasonsList.innerHTML = siteData.reasons.map((r, i) => `
+    allReasonsList.innerHTML = reasonsList.map((r, i) => `
       <div class="reason-list-item">
         <span class="item-badge">#${i + 1} ${r.icon}</span>
         <div class="item-text">
@@ -595,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 9. FINALE SURPRISE: PLAYFUL RUNAWAY 'NO' (MOBILE & DESKTOP) & CELEBRATION
+  // 9. FINALE PROPOSAL & CELEBRATION (RUNAWAY BUTTON & YES CELEBRATION)
   // ==========================================================================
 
   const noBtn = document.getElementById('noBtn');
@@ -604,19 +572,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const celebrationBox = document.getElementById('celebrationBox');
   const replayCelebrationBtn = document.getElementById('replayCelebrationBtn');
 
-  function dodgeButton(e) {
+  function dodgeNoButton(e) {
     if (e) e.preventDefault();
-    const maxX = window.innerWidth < 600 ? 60 : 120;
-    const maxY = 45;
+    const maxX = window.innerWidth < 600 ? 70 : 130;
+    const maxY = 50;
     const randomX = (Math.random() - 0.5) * maxX * 2;
     const randomY = (Math.random() - 0.5) * maxY * 2;
 
     noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
   }
 
-  noBtn.addEventListener('mouseenter', dodgeButton);
-  noBtn.addEventListener('touchstart', dodgeButton);
-  noBtn.addEventListener('click', dodgeButton);
+  noBtn.addEventListener('mouseenter', dodgeNoButton);
+  noBtn.addEventListener('touchstart', dodgeNoButton);
+  noBtn.addEventListener('click', dodgeNoButton);
 
   yesBtn.addEventListener('click', () => {
     proposalBox.style.display = 'none';
@@ -653,8 +621,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10. PERSONALIZATION SETTINGS MODAL
   // ==========================================================================
 
-  const quickPersonalizeBtn = document.getElementById('quickPersonalizeBtn');
-  const editLetterBtn = document.getElementById('editLetterBtn');
   const personalizeModal = document.getElementById('personalizeModal');
   const settingsCloseBtn = document.getElementById('settingsCloseBtn');
   const settingsBackdrop = document.getElementById('settingsBackdrop');
@@ -677,7 +643,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  quickPersonalizeBtn.addEventListener('click', openPersonalizeModal);
   editLetterBtn.addEventListener('click', openPersonalizeModal);
   settingsCloseBtn.addEventListener('click', closePersonalizeModal);
   settingsBackdrop.addEventListener('click', closePersonalizeModal);
@@ -685,125 +650,31 @@ document.addEventListener('DOMContentLoaded', () => {
   personalizeForm.addEventListener('submit', (e) => {
     e.preventDefault();
     siteData.herName = inputHerName.value.trim() || 'Khushi';
-    siteData.authorName = inputYourName.value.trim() || 'With all my love & heart ♡';
+    siteData.authorName = inputYourName.value.trim() || '— Tumhara Anshu 💌';
     siteData.letterContent = inputLetterText.value.trim() || DEFAULT_DATA.letterContent;
 
-    saveSiteData();
-    updateLetterDOM();
+    document.getElementById('letterSalutation').textContent = `${siteData.herName} ❤️🥺`;
+    document.getElementById('letterAuthor').textContent = siteData.authorName;
+
+    const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
+    document.getElementById('letterBodyContent').innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
+
     closePersonalizeModal();
-    alert('बदलाव सेव हो गए! Personalization saved successfully 💖');
+    alert('Changes saved successfully! 💖');
   });
 
   resetDefaultsBtn.addEventListener('click', () => {
-    if (confirm('वापस मूल सुंदर शब्दों पर रीसेट करें? Reset custom text to default?')) {
+    if (confirm('Reset custom letter back to Anshu\'s original heartfelt note?')) {
       siteData.herName = DEFAULT_DATA.herName;
       siteData.authorName = DEFAULT_DATA.authorName;
       siteData.letterContent = DEFAULT_DATA.letterContent;
-      saveSiteData();
-      updateLetterDOM();
+      
+      document.getElementById('letterSalutation').textContent = `Khushi ❤️🥺`;
+      document.getElementById('letterAuthor').textContent = siteData.authorName;
+      const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
+      document.getElementById('letterBodyContent').innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
+
       closePersonalizeModal();
-    }
-  });
-
-  // ==========================================================================
-  // 11. REAL PHOTO MANAGER MODAL
-  // ==========================================================================
-
-  const managePhotosBtn = document.getElementById('managePhotosBtn');
-  const photoManagerModal = document.getElementById('photoManagerModal');
-  const photoMgrCloseBtn = document.getElementById('photoMgrCloseBtn');
-  const photoMgrBackdrop = document.getElementById('photoMgrBackdrop');
-  const savePhotosBtn = document.getElementById('savePhotosBtn');
-  const resetPhotosBtn = document.getElementById('resetPhotosBtn');
-
-  const fileSlots = [
-    document.getElementById('fileSlot1'),
-    document.getElementById('fileSlot2'),
-    document.getElementById('fileSlot3'),
-    document.getElementById('fileSlot4')
-  ];
-  const captionSlots = [
-    document.getElementById('captionSlot1'),
-    document.getElementById('captionSlot2'),
-    document.getElementById('captionSlot3'),
-    document.getElementById('captionSlot4')
-  ];
-
-  function openPhotoManager() {
-    captionSlots.forEach((slot, i) => {
-      if (slot) {
-        slot.value = siteData.memories[i] ? siteData.memories[i].text : '';
-      }
-    });
-    photoManagerModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closePhotoManager() {
-    photoManagerModal.hidden = true;
-    document.body.style.overflow = '';
-  }
-
-  managePhotosBtn.addEventListener('click', openPhotoManager);
-  photoMgrCloseBtn.addEventListener('click', closePhotoManager);
-  photoMgrBackdrop.addEventListener('click', closePhotoManager);
-
-  function readFileAsDataURL(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (e) => resolve(e.target.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  }
-
-  savePhotosBtn.addEventListener('click', async () => {
-    for (let i = 0; i < fileSlots.length; i++) {
-      if (!fileSlots[i]) continue;
-      const file = fileSlots[i].files[0];
-      if (file) {
-        try {
-          const dataUrl = await readFileAsDataURL(file);
-          if (siteData.memories[i]) {
-            siteData.memories[i].src = dataUrl;
-          }
-        } catch (err) {
-          console.error('Error reading file:', err);
-        }
-      }
-      if (captionSlots[i] && captionSlots[i].value.trim()) {
-        if (siteData.memories[i]) {
-          siteData.memories[i].text = captionSlots[i].value.trim();
-        }
-      }
-    }
-
-    saveSiteData();
-    applyPhotosToDOM();
-    closePhotoManager();
-    alert('तस्वीरें अपडेट हो गईं! Photos updated! 📸✨');
-  });
-
-  function applyPhotosToDOM() {
-    const cards = document.querySelectorAll('.polaroid-card');
-    cards.forEach((card, idx) => {
-      const mem = siteData.memories[idx];
-      if (mem) {
-        const img = card.querySelector('.polaroid-img');
-        const text = card.querySelector('.memory-text');
-        if (img) img.src = mem.src;
-        if (text) text.textContent = mem.text;
-      }
-    });
-  }
-  applyPhotosToDOM();
-
-  resetPhotosBtn.addEventListener('click', () => {
-    if (confirm('तस्वीरें रीसेट करें? Reset back to original memory images?')) {
-      siteData.memories = JSON.parse(JSON.stringify(DEFAULT_DATA.memories));
-      saveSiteData();
-      applyPhotosToDOM();
-      closePhotoManager();
     }
   });
 
@@ -812,8 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') {
       closePhotoModal();
       closePersonalizeModal();
-      closePhotoManager();
-      if (allReasonsModal) allReasonsModal.hidden = true;
+      allReasonsModal.hidden = true;
       document.body.style.overflow = '';
     }
   });
