@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Khushi ♡ — A Little Surprise For You</title>
-  <meta name="description" content="A romantic personal gift website created with love for Khushi. Celebrating our beautiful memories, heartfelt letters, and endless reasons to love you.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>For My Khushi ♡ — मेरी प्यारी खुशी के लिए एक छोटा सा तोहफा</title>
+  <meta name="description" content="A romantic personal gift website created with endless love for Khushi. Beautiful Hindi poetry, precious memories, cute panda animations, and heartfelt letters.">
   <meta name="theme-color" content="#fff0f3">
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts for English + Hindi Elegance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Interactive Floating Petals & Hearts Background Canvas -->
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Cute Interactive Floating Panda Companion -->
+  <div class="floating-panda-widget" id="floatingPanda" title="Click me for a sweet Hindi love quote!">
+    <div class="panda-speech-bubble" id="pandaBubble">
+      <span>खुशी, तुम मेरी सबसे प्यारी मुस्कान हो! 💖</span>
+    </div>
+    <div class="panda-avatar-wrap">
+      <img src="assets/images/panda-cuddle.gif" alt="Cute animated panda" class="panda-avatar-img">
+      <span class="click-hint">Tap me! 🐾</span>
+    </div>
+  </div>
 
   <!-- Ambient Audio Floating Controller -->
   <div class="music-pill" id="musicControl" role="region" aria-label="Music Player">
@@ -42,9 +53,10 @@
     </div>
   </div>
 
-  <!-- Navigation Dots -->
+  <!-- Mobile-Friendly Bottom / Side Navigation -->
   <nav class="side-nav" aria-label="Page navigation">
     <a href="#welcome" class="nav-dot active" data-title="Welcome" aria-label="Go to Welcome section"></a>
+    <a href="#shayari" class="nav-dot" data-title="दिल की शायरी" aria-label="Go to Shayari section"></a>
     <a href="#memories" class="nav-dot" data-title="Memories" aria-label="Go to Memories section"></a>
     <a href="#letter" class="nav-dot" data-title="Love Letter" aria-label="Go to Love Letter section"></a>
     <a href="#reasons" class="nav-dot" data-title="Why I Love You" aria-label="Go to Reasons section"></a>
@@ -59,9 +71,11 @@
          ============================================== -->
     <section id="welcome" class="hero-section" aria-labelledby="welcome-title">
       <div class="hero-content">
+        
+        <!-- Romantic Hindi Badge -->
         <div class="badge-pill">
           <span class="sparkle">✨</span>
-          <span>A little surprise crafted just for you</span>
+          <span class="hindi-badge-text">सिर्फ मेरी प्यारी खुशी के लिए एक दिल से बनाया तोहफा</span>
           <span class="sparkle">✨</span>
         </div>
 
@@ -70,125 +84,216 @@
           <span class="heart-pulse">♡</span>
         </h1>
 
-        <p class="hero-subtitle">
-          In a world full of ordinary things, you are my most magical story. I made this little universe just to remind you how deeply you are loved.
-        </p>
+        <!-- Romantic Hindi Subtitle with Poetry -->
+        <div class="hero-hindi-poetry">
+          <p class="hindi-main-quote">
+            "तुम्हारी एक मुस्कान पर अपनी पूरी दुनिया वार दूं,<br>
+            तुम सिर्फ मेरी मोहब्बत नहीं, मेरी पूरी कायनात हो खुशी 💖"
+          </p>
+          <p class="hero-subtitle">
+            In a world of billions, you are my favorite miracle. I created this little dreamy universe just to remind you how endlessly cherished and loved you are every single day.
+          </p>
+        </div>
 
-        <!-- Cute Relationship Milestone / Live Sparkle Clock -->
+        <!-- Cute Panda Animation in Hero -->
+        <div class="hero-panda-card glass-panel">
+          <div class="hero-panda-gif-wrap">
+            <img src="assets/images/panda-cuddle.gif" alt="Cute couple pandas cuddling" class="hero-panda-img">
+          </div>
+          <div class="hero-panda-content">
+            <span class="panda-tag">🐼 Cute Panda Love Note ♡</span>
+            <p class="panda-note-text">
+              "जैसे पांडा को अपना बाम्बू पसंद है, वैसे ही मुझे हर पल तुम्हारी बाहों में सुकून मिलता है! 🌸"
+            </p>
+          </div>
+        </div>
+
+        <!-- Relationship Milestone / Heart Clock -->
         <div class="love-counter-card glass-panel">
           <div class="counter-header">
             <span class="counter-icon">⏳</span>
-            <span class="counter-title">Every single moment with you is precious</span>
+            <span class="counter-title">हर एक पल तुम्हारे साथ खुदा की सबसे बड़ी नेमत है</span>
           </div>
           <div class="counter-grid">
             <div class="counter-item">
               <span class="counter-number" id="daysCount">∞</span>
-              <span class="counter-unit">Days of Warmth</span>
+              <span class="counter-unit">अनगिनत यादें (Infinite Days)</span>
             </div>
             <div class="counter-item">
               <span class="counter-number" id="smilesCount">10,000+</span>
-              <span class="counter-unit">Smiles Caused</span>
+              <span class="counter-unit">प्यारी मुस्कानें (Smiles Shared)</span>
             </div>
             <div class="counter-item">
               <span class="counter-number" id="lovePercent">100%</span>
-              <span class="counter-unit">My Whole Heart</span>
+              <span class="counter-unit">मेरा पूरा दिल (My Entire Heart)</span>
             </div>
           </div>
         </div>
 
         <div class="hero-cta-group">
           <a href="#memories" class="btn btn-primary btn-glow" id="openSurpriseBtn">
-            <span>Open Your Surprise</span>
-            <span class="btn-arrow">💌</span>
+            <span>ओपन करो अपना सरप्राइज 💌</span>
+            <span class="btn-arrow">↓</span>
           </a>
           <button class="btn btn-secondary" id="quickPersonalizeBtn" title="Personalize details for Khushi">
-            <span>⚙️ Personalize</span>
+            <span>⚙️ पर्सनल सेटिंग</span>
           </button>
         </div>
 
         <!-- Scroll down indicator -->
         <div class="scroll-cue">
-          <span>Scroll to uncover the love</span>
+          <span>नीचे स्क्रॉल करो और प्यार महसूस करो ♡</span>
           <div class="scroll-arrow">↓</div>
         </div>
       </div>
     </section>
 
     <!-- ==============================================
-         SECTION 2: MEMORIES GALLERY
+         SPECIAL SECTION: DIL KI SHAYARI (HINDI LOVE POETRY)
+         ============================================== -->
+    <section id="shayari" class="section shayari-section" aria-labelledby="shayari-title">
+      <div class="section-header">
+        <span class="section-tag">दिल की कलम से</span>
+        <h2 id="shayari-title" class="section-title hindi-font">तेरे नाम कुछ खास पंक्तियाँ 💖</h2>
+        <p class="section-desc">जो बातें लफ्जों में नहीं कह पाते, वो शायरी बयां कर देती है...</p>
+      </div>
+
+      <div class="shayari-grid">
+        <div class="shayari-card glass-panel">
+          <span class="shayari-icon">🌸</span>
+          <p class="shayari-text">
+            "तेरे मुस्कुराने का असर कुछ ऐसा हुआ,<br>
+            कि खुद को भूलकर हम हमेशा के लिए सिर्फ तेरे हो गए।"
+          </p>
+          <span class="shayari-sub">~ सिर्फ तुम्हारी हंसी के नाम ♡</span>
+        </div>
+
+        <div class="shayari-card glass-panel">
+          <span class="shayari-icon">✨</span>
+          <p class="shayari-text">
+            "चांद तारों की चाहत किसे है जिंदगी में,<br>
+            जब मेरी पूरी कायनात मेरी खुशी के चेहरे में मुस्कुराती है।"
+          </p>
+          <span class="shayari-sub">~ मेरी सबसे खूबसूरत रोशनी 💫</span>
+        </div>
+
+        <div class="shayari-card glass-panel">
+          <span class="shayari-icon">🕊️</span>
+          <p class="shayari-text">
+            "हाथ थामे रखना मेरा हर मोड़ पर जिंदगी के,<br>
+            तुमसे ही तो मेरी सुबह हसीन और हर शाम सुकून भरी होती है।"
+          </p>
+          <span class="shayari-sub">~ हर जन्म का वादा 🤝💖</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2: MEMORIES GALLERY (WITH USER'S ASSETS & CARTOON/ARTISTIC STYLING)
          ============================================== -->
     <section id="memories" class="section memories-section" aria-labelledby="memories-title">
       <div class="section-header">
-        <span class="section-tag">Cherished Moments</span>
-        <h2 id="memories-title" class="section-title">Our Little World of Memories</h2>
-        <p class="section-desc">Every smile, every glance, and every quiet laughter with you lives forever in my heart.</p>
+        <span class="section-tag">अनमोल लम्हें • Cherished Memories</span>
+        <h2 id="memories-title" class="section-title">हमारी खूबसूरत यादों का जहां 📸</h2>
+        <p class="section-desc">हर तस्वीर में हमारे प्यार और खुशी की एक प्यारी सी दास्तान छुपी है।</p>
       </div>
 
       <div class="polaroid-gallery" id="memoryGallery">
-        <!-- Polaroid Card 1 -->
-        <article class="polaroid-card" tabindex="0" data-index="0">
+        
+        <!-- Polaroid Card 1: User's Cartoon Artwork (IMG_2495.png) -->
+        <article class="polaroid-card cartoon-card" tabindex="0" data-index="0">
           <div class="tape-strip" aria-hidden="true"></div>
-          <div class="polaroid-img-wrap">
-            <img src="assets/images/memory-01.jpg" alt="Cozy coffee date holding hands with Khushi" class="polaroid-img" loading="lazy">
+          <div class="card-sticker-panda" title="Cute Bubu Panda!">
+            <img src="assets/images/panda-running.gif" alt="Panda running with love" class="sticker-gif">
+          </div>
+          <div class="polaroid-img-wrap cartoon-frame">
+            <img src="assets/images/IMG_2495.png" alt="Cartoon artwork of us sitting together happily" class="polaroid-img cartoon-art-img" loading="lazy">
             <button class="expand-btn" aria-label="View photo larger">🔍</button>
           </div>
           <div class="polaroid-caption">
-            <span class="memory-tag">☕ Warm Cafe Afternoons</span>
-            <h3 class="memory-title">Hands Held Across the Table</h3>
-            <p class="memory-text">The world outside was rushing, but right there, sipping warm coffee and looking into your eyes, everything felt completely still and peaceful.</p>
-            <span class="memory-date">A day etched in my heart ♡</span>
+            <span class="memory-tag">🎨 हमारी प्यारी कार्टून दुनिया • Dream Cafe</span>
+            <h3 class="memory-title">लाल टेबल और ढेर सारी मीठी बातें</h3>
+            <p class="memory-text hindi-caption">
+              "सामने तुम बैठी हो, चेहरे पर वो प्यारी सी मुस्कान... इस कार्टून जैसी जादुई दुनिया में भी और असली जिंदगी में भी, तुम ही मेरी सबसे पसंदीदा साथी हो।"
+            </p>
+            <span class="memory-date">Two hearts, infinite smiles ♡</span>
           </div>
         </article>
 
-        <!-- Polaroid Card 2 -->
-        <article class="polaroid-card" tabindex="0" data-index="1">
+        <!-- Polaroid Card 2: User's Yellow Dress Photo (ac279f4b-f24b-419d-b2a8-31da8d25d9c9.jpeg) -->
+        <article class="polaroid-card cartoon-card" tabindex="0" data-index="1">
           <div class="tape-strip" aria-hidden="true"></div>
-          <div class="polaroid-img-wrap">
-            <img src="assets/images/memory-02.jpg" alt="Romantic sunset walk on the beach with Khushi" class="polaroid-img" loading="lazy">
+          <div class="card-sticker-badge">✨ Sunshine</div>
+          <div class="polaroid-img-wrap cartoon-filter-wrap">
+            <img src="assets/images/ac279f4b-f24b-419d-b2a8-31da8d25d9c9.jpeg" alt="Khushi in beautiful yellow outfit" class="polaroid-img cartoon-filtered-img" loading="lazy">
             <button class="expand-btn" aria-label="View photo larger">🔍</button>
           </div>
           <div class="polaroid-caption">
-            <span class="memory-tag">🌅 Golden Hour Whispers</span>
-            <h3 class="memory-title">Walking Beside the Waves</h3>
-            <p class="memory-text">Barefoot in the soft sand, the ocean glowing golden pink, with your laughter matching the rhythm of the waves. My happiest place is right next to you.</p>
-            <span class="memory-date">Sunset memories with you ♡</span>
+            <span class="memory-tag">💛 मेरी खिली हुई धूप • Radiant Sunshine</span>
+            <h3 class="memory-title">पीले लिबास में तुम्हारी वो मासूम अदा</h3>
+            <p class="memory-text hindi-caption">
+              "जब तुम इस तरह मुस्कुराती हो, तो जैसे चारों तरफ फूल खिल जाते हैं। तुम्हारी सादगी और नूर के आगे पूरी दुनिया की खूबसूरती फीकी है।"
+            </p>
+            <span class="memory-date">Suraj ki pehli kiran jaisi ♡</span>
           </div>
         </article>
 
-        <!-- Polaroid Card 3 -->
-        <article class="polaroid-card" tabindex="0" data-index="2">
+        <!-- Polaroid Card 3: User's Saree Selfie (IMG_1822.jpeg) -->
+        <article class="polaroid-card cartoon-card" tabindex="0" data-index="2">
           <div class="tape-strip" aria-hidden="true"></div>
-          <div class="polaroid-img-wrap">
-            <img src="assets/images/memory-03.jpg" alt="Cozy night stargazing together under fairy lights" class="polaroid-img" loading="lazy">
+          <div class="card-sticker-badge">🌹 Gorgeous</div>
+          <div class="polaroid-img-wrap cartoon-filter-wrap">
+            <img src="assets/images/IMG_1822.jpeg" alt="Khushi in elegant floral saree" class="polaroid-img cartoon-filtered-img" loading="lazy">
             <button class="expand-btn" aria-label="View photo larger">🔍</button>
           </div>
           <div class="polaroid-caption">
-            <span class="memory-tag">✨ Under the Starlit Sky</span>
-            <h3 class="memory-title">Counting Stars, Wishing on You</h3>
-            <p class="memory-text">Wrapped under a warm blanket with fairy lights dancing above. People search their whole lives for a falling star, but my wish already came true with you.</p>
-            <span class="memory-date">Under the moonlight ♡</span>
+            <span class="memory-tag">🌹 सादगी और नजाकत • Pure Grace</span>
+            <h3 class="memory-title">साड़ी में तुम्हारा वो दिलकश अंदाज</h3>
+            <p class="memory-text hindi-caption">
+              "तुम्हारी ये तस्वीर जब भी देखता हूँ, दिल की धड़कनें तेज हो जाती हैं। तुम्हारी सादगी में ही वो जादू है जो हर पल मुझे तुम्हारा दीवाना बना देता है।"
+            </p>
+            <span class="memory-date">Kudrat ka sabse haseen tohfa ♡</span>
           </div>
         </article>
+
+        <!-- Polaroid Card 4: User's Dual Wallpapers (IMG_1664.png) -->
+        <article class="polaroid-card cartoon-card" tabindex="0" data-index="3">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="card-sticker-badge">📱 Connected</div>
+          <div class="polaroid-img-wrap cartoon-filter-wrap">
+            <img src="assets/images/IMG_1664.png" alt="Side by side matching wallpaper screens" class="polaroid-img cartoon-filtered-img" loading="lazy">
+            <button class="expand-btn" aria-label="View photo larger">🔍</button>
+          </div>
+          <div class="polaroid-caption">
+            <span class="memory-tag">📱 दो स्क्रीन, एक धड़कन • Linked Hearts</span>
+            <h3 class="memory-title">स्क्रीन पर भी और दिल में भी सिर्फ तुम</h3>
+            <p class="memory-text hindi-caption">
+              "फोन की स्क्रीन अनलॉक हो या दिन का कोई भी पल, तुम्हारी तस्वीर देखते ही चेहरे पर एक सुकून भरी मुस्कान आ जाती है। हम हमेशा साथ हैं।"
+            </p>
+            <span class="memory-date">Always by each other's side ♡</span>
+          </div>
+        </article>
+
       </div>
 
       <!-- Add Your Own Photos Action Banner -->
       <div class="custom-photo-bar glass-panel">
         <div class="custom-photo-text">
           <span class="icon">📷</span>
-          <span>Want to replace these with your own real photos of you & Khushi?</span>
+          <span>अपनी और भी नई तस्वीरें या यादें जोड़ना चाहते हो?</span>
         </div>
-        <button class="btn btn-sm btn-outline" id="managePhotosBtn">Upload Real Photos</button>
+        <button class="btn btn-sm btn-outline" id="managePhotosBtn">तस्वीरें बदलें / जोड़ें</button>
       </div>
     </section>
 
     <!-- ==============================================
-         SECTION 3: A HEARTFELT LETTER FOR KHUSHI
+         SECTION 3: A HEARTFELT LETTER FOR KHUSHI (ENVELOPE)
          ============================================== -->
     <section id="letter" class="section letter-section" aria-labelledby="letter-title">
       <div class="section-header">
-        <span class="section-tag">Straight From The Heart</span>
-        <h2 id="letter-title" class="section-title">A Letter Written Just For You</h2>
-        <p class="section-desc">Some words are meant to be kept close to the heart. Tap the wax seal to unseal it.</p>
+        <span class="section-tag">सीधे दिल की गहराइयों से</span>
+        <h2 id="letter-title" class="section-title">एक खास खत मेरी खुशी के नाम 💌</h2>
+        <p class="section-desc">कुछ जज़्बात ऐसे होते हैं जिन्हें सिर्फ दिल से पढ़ा जा सकता है। वैक्स सील पर टैप करके खत खोलो।</p>
       </div>
 
       <div class="envelope-stage">
@@ -203,37 +308,43 @@
               <span class="seal-letter">K</span>
               <span class="seal-heart">♡</span>
             </div>
-            <div class="seal-tooltip">Click to Open 💌</div>
+            <div class="seal-tooltip">सील खोलो 💌 Click to Open</div>
           </div>
 
           <!-- Letter Paper (Slides out and expands) -->
           <div class="letter-sheet" id="letterSheet">
             <div class="letter-inner">
               <div class="letter-decor-top">❦ ❧</div>
-              <h3 class="letter-greeting script-font" id="letterSalutation">My Dearest Khushi,</h3>
+              <h3 class="letter-greeting script-font" id="letterSalutation">My Dearest Khushi, मेरी प्यारी खुशी,</h3>
               
               <div class="letter-body" id="letterBodyContent">
                 <p>
-                  If you are reading this, I want you to take a gentle breath and know how deeply, completely, and endlessly cherished you are.
+                  अगर तुम यह खत पढ़ रही हो, तो एक गहरी और सुकून भरी सांस लो और जान लो कि तुम इस दुनिया में मेरे लिए सबसे ज्यादा अनमोल और खास हो।
                 </p>
                 <p>
-                  From the moment you came into my life, everything took on a softer glow and a warmer melody. You have this rare and effortless grace—the way your eyes light up when you laugh, the kindness you show to everyone around you, and how even the most ordinary day turns extraordinary just because you are in it.
+                  जिस दिन से तुम मेरी जिंदगी में आई हो, हर सुबह और हसीन लगने लगी है। तुम्हारी वो प्यारी सी हंसी, तुम्हारी वो मासूम बातें और जिस तरह तुम मेरा ख्याल रखती हो—वो मेरे दिल को एक ऐसा सुकून देता है जो लफ्जों में कभी बयां नहीं हो सकता।
                 </p>
                 <p>
-                  Whenever the world feels loud or overwhelming, thinking of you is my instant peace. You are my comfort, my favorite laugh, and my safest home. I don't just love you for who you are; I love who I become when I am standing by your side.
+                  जब भी जिंदगी में कोई परेशानी या थकावट होती है, तुम्हारा एक बार प्यार से देख लेना या मुस्कुरा देना मेरी सारी तकलीफें मिटा देता है। तुम सिर्फ मेरी मोहब्बत नहीं हो, तुम मेरा सबसे महफूज घर (safe haven) हो।
                 </p>
                 <p>
-                  Thank you for being my constant warmth, my sweetest companion, and the reason my heart smiles without even trying. No matter where life takes us, I promise to celebrate you, protect your peace, and love you more with every passing sunrise.
+                  शुक्रिया मेरी जिंदगी को खुशियों से भरने के लिए, मुझे समझने के लिए, और मेरे साथ हर पल मुस्कुराने के लिए। मैं वादा करता हूँ कि आने वाले हर दिन, हर मौसम में तुम्हारा हाथ ऐसे ही थामे रखूँगा और तुम्हें दुनिया का सबसे खुश इंसान बनाऊँगा।
                 </p>
+              </div>
+
+              <!-- Cute Panda Hug inside the letter -->
+              <div class="letter-cute-footer">
+                <img src="assets/images/panda-cuddle.gif" alt="Panda cuddle" class="letter-panda-mini">
+                <p class="letter-panda-quote">"हमेशा ऐसे ही गले लगकर मुस्कुराते रहेंगे!"</p>
               </div>
 
               <div class="letter-signature">
-                <p class="sign-off">Forever and always yours,</p>
-                <p class="sign-name script-font" id="letterAuthor">With all my love ♡</p>
+                <p class="sign-off">Forever and always yours, हमेशा सिर्फ तुम्हारा,</p>
+                <p class="sign-name script-font" id="letterAuthor">With all my love & heart ♡</p>
               </div>
 
               <div class="letter-actions">
-                <button class="btn btn-sm btn-outline" id="editLetterBtn">✏️ Edit Words</button>
+                <button class="btn btn-sm btn-outline" id="editLetterBtn">✏️ Edit Words (खत बदलें)</button>
                 <button class="btn btn-sm btn-secondary" id="foldLetterBtn">Close Letter ✉️</button>
               </div>
             </div>
@@ -243,19 +354,19 @@
     </section>
 
     <!-- ==============================================
-         SECTION 4: REASONS I LOVE YOU
+         SECTION 4: REASONS I LOVE YOU (HINDI & ENGLISH)
          ============================================== -->
     <section id="reasons" class="section reasons-section" aria-labelledby="reasons-title">
       <div class="section-header">
-        <span class="section-tag">Every Little Thing</span>
-        <h2 id="reasons-title" class="section-title">Reasons Why My Heart Chose You</h2>
-        <p class="section-desc">There are thousands of reasons, but here are some of the sweetest ones.</p>
+        <span class="section-tag">अनगिनत वजहें</span>
+        <h2 id="reasons-title" class="section-title">Reasons Why My Heart Chose You 💖</h2>
+        <p class="section-desc">तुम्हें चाहने की हजारों वजहें हैं, पर ये 10 मेरे दिल के सबसे करीब हैं।</p>
       </div>
 
       <div class="reasons-carousel-container">
         <!-- Floating Heart Counter -->
         <div class="card-progress-bar">
-          <span class="progress-label" id="reasonCounterText">Reason 1 of 10</span>
+          <span class="progress-label" id="reasonCounterText">वजह #1 (Reason 1 of 10)</span>
           <div class="progress-track">
             <div class="progress-fill" id="reasonProgressFill" style="width: 10%;"></div>
           </div>
@@ -266,11 +377,11 @@
           <div class="reason-card glass-panel" id="reasonActiveCard">
             <div class="card-top-icon" id="reasonIcon">🌸</div>
             <span class="card-number-badge" id="reasonBadge">Reason #1</span>
-            <h3 class="card-reason-title" id="reasonTitle">The Magic In Your Smile</h3>
+            <h3 class="card-reason-title" id="reasonTitle">तेरी वो जादुई मुस्कान (The Magic In Your Smile)</h3>
             <p class="card-reason-body" id="reasonDescription">
-              Your genuine smile has this quiet superpower to turn my worst, most exhausting days into pure warmth in a split second.
+              तुम्हारी एक सच्ची मुस्कान मेरे दिनभर की सारी थकान और उदासी को एक पल में गायब कर देती है। तुम्हारी हंसी में वो जादू है जो हर गम भुला दे।
             </p>
-            <div class="card-tag" id="reasonTag">#MyFavoriteView</div>
+            <div class="card-tag" id="reasonTag">#मेरीपसंदीदामुस्कान</div>
           </div>
         </div>
 
@@ -278,15 +389,14 @@
         <div class="reason-controls">
           <button class="btn btn-circle" id="prevReasonBtn" aria-label="Previous reason" title="Previous reason">←</button>
           <button class="btn btn-primary btn-glow" id="nextReasonBtn">
-            <span>Show Me Another Reason</span>
-            <span>✨</span>
+            <span>अगली वजह देखो ✨</span>
           </button>
           <button class="btn btn-circle" id="shuffleReasonBtn" aria-label="Random reason" title="Random reason">🔀</button>
         </div>
 
         <!-- Little Interactive Love Jar / Add Your Own Reason -->
         <div class="reasons-footer-action">
-          <button class="text-link" id="viewAllReasonsBtn">📜 View all reasons in a sweet list</button>
+          <button class="text-link" id="viewAllReasonsBtn">📜 सारी 10 वजहें एक साथ पढ़ें (View All)</button>
         </div>
       </div>
     </section>
@@ -304,25 +414,35 @@
           <div class="pulse-ring delay-1"></div>
         </div>
 
-        <span class="section-tag">A Promise For Forever</span>
-        <h2 id="finale-title" class="finale-title script-font">
-          "If I could choose again, I would still choose you."
+        <span class="section-tag">एक हमेशा का वादा • Forever Promise</span>
+        <h2 id="finale-title" class="finale-title hindi-font">
+          "अगर मुझे हजार जिंदगियां भी मिलें,<br>
+          तो हर जिंदगी में मेरा दिल सिर्फ तुम्हें ही चुनेगा।"
         </h2>
 
         <p class="finale-message">
-          Out of 8 billion people on this spinning earth, meeting you will always be the most beautiful chapter of my life. 
-          No distance, no passage of time, and no stormy weather could ever change how proud and grateful I am to have you.
+          8 अरब लोगों की इस विशाल दुनिया में, तुम मिलना मेरी तकदीर का सबसे खूबसूरत तोहफा है।
+          वक्त बदलेगा, मौसम बदलेंगे, लेकिन तुम्हारे लिए मेरा प्यार हर दिन और गहरा होता जाएगा।
         </p>
 
-        <!-- Cute Interactive Question / Proposal -->
+        <!-- Cute Panda Love Gif in Finale -->
+        <div class="finale-panda-wrap">
+          <img src="assets/images/panda-love.gif" alt="Cute panda love animation" class="finale-panda-gif">
+        </div>
+
+        <!-- Cute Interactive Proposal / Question -->
         <div class="interactive-proposal" id="proposalBox">
-          <h3 class="proposal-question">Will you promise to always stay by my side, Khushi?</h3>
+          <h3 class="proposal-question hindi-font">
+            क्या तुम वादा करती हो कि हमेशा ऐसे ही मेरा हाथ थामे रखोगी, खुशी? 💍💖
+          </h3>
+          <p class="proposal-sub">(Will you promise to always stay by my side, Khushi?)</p>
+
           <div class="proposal-buttons" id="proposalBtnGroup">
             <button class="btn btn-primary btn-glow btn-lg" id="yesBtn">
-              <span>Yes! Forever and Always 💖</span>
+              <span>हाँ! हमेशा और सिर्फ तुम्हारी 💖 (Yes Always!)</span>
             </button>
             <button class="btn btn-secondary btn-runaway" id="noBtn">
-              <span>No 🙈</span>
+              <span>नहीं 🙈 (No)</span>
             </button>
           </div>
         </div>
@@ -330,16 +450,19 @@
         <!-- Hidden Celebration Message (reveals after YES!) -->
         <div class="celebration-box hidden" id="celebrationBox">
           <div class="celebration-stars">🎉 💐 💍 🥂 💖</div>
-          <h3 class="celebration-title script-font">You Just Made Me The Happiest!</h3>
+          <div class="celebration-panda-cheer">
+            <img src="assets/images/panda-cuddle.gif" alt="Pandas celebrating together" class="celebration-panda-img">
+          </div>
+          <h3 class="celebration-title hindi-font">तुमने मुझे दुनिया का सबसे खुश इंसान बना दिया!</h3>
           <p class="celebration-desc">
-            I love you endlessly, Khushi! Today, tomorrow, and every lifetime after.
+            आई लव यू सो मच, मेरी प्यारी खुशी! आज, कल और आने वाले हर जन्म में सिर्फ तुम्हारा। 🌸✨
           </p>
-          <button class="btn btn-sm btn-outline" id="replayCelebrationBtn">Shower More Love 🎊</button>
+          <button class="btn btn-sm btn-outline" id="replayCelebrationBtn">फूल और प्यार बरसाओ 🎊 (More Love)</button>
         </div>
 
         <div class="finale-signature">
           <div class="divider-rose">❦ ❀ ❦</div>
-          <p class="crafted-tag">Made with endless love, just for Khushi ♡</p>
+          <p class="crafted-tag">Made with endless love & care, just for Khushi ♡</p>
         </div>
       </div>
     </section>
@@ -374,22 +497,22 @@
       <div class="settings-header">
         <span class="icon">✨</span>
         <h3 id="settingsTitle" class="modal-title">Personalize This Gift</h3>
-        <p class="modal-desc">Easily customize the names, nicknames, and memories saved directly to your browser!</p>
+        <p class="modal-desc">Easily customize the names, nicknames, and love letter text saved directly to your device!</p>
       </div>
 
       <form id="personalizeForm" class="settings-form">
         <div class="form-group">
-          <label for="inputHerName">Her Name / Nickname</label>
+          <label for="inputHerName">Her Name / Nickname (उनका नाम)</label>
           <input type="text" id="inputHerName" value="Khushi" required placeholder="e.g. Khushi, My Angel, Cutie">
         </div>
 
         <div class="form-group">
-          <label for="inputYourName">Your Signature / Name</label>
-          <input type="text" id="inputYourName" value="With all my love ♡" required placeholder="e.g. Yours Always, [Your Name]">
+          <label for="inputYourName">Your Signature / Name (तुम्हारा नाम)</label>
+          <input type="text" id="inputYourName" value="With all my love & heart ♡" required placeholder="e.g. Yours Always, [Your Name]">
         </div>
 
         <div class="form-group">
-          <label for="inputLetterText">Heartfelt Letter Content</label>
+          <label for="inputLetterText">Heartfelt Letter Content (खत के शब्द)</label>
           <textarea id="inputLetterText" rows="6" placeholder="Write your own custom letter..."></textarea>
         </div>
 
@@ -411,29 +534,34 @@
       <div class="settings-header">
         <span class="icon">📸</span>
         <h3 id="photoMgrTitle" class="modal-title">Customize Memory Photos</h3>
-        <p class="modal-desc">Upload real pictures from your device to replace the memory cards instantly.</p>
+        <p class="modal-desc">Upload real pictures from your phone or PC to replace the polaroids instantly.</p>
       </div>
 
       <div class="photo-slots-grid">
         <div class="photo-slot">
-          <h4>Memory #1 (Cafe Date)</h4>
+          <h4>Memory #1 (Cartoon Couple Art)</h4>
           <input type="file" id="fileSlot1" accept="image/*" class="slot-input">
           <input type="text" id="captionSlot1" placeholder="Custom caption..." class="slot-caption">
         </div>
         <div class="photo-slot">
-          <h4>Memory #2 (Sunset Walk)</h4>
+          <h4>Memory #2 (Yellow Sunshine)</h4>
           <input type="file" id="fileSlot2" accept="image/*" class="slot-input">
           <input type="text" id="captionSlot2" placeholder="Custom caption..." class="slot-caption">
         </div>
         <div class="photo-slot">
-          <h4>Memory #3 (Stargazing)</h4>
+          <h4>Memory #3 (Saree Elegance)</h4>
           <input type="file" id="fileSlot3" accept="image/*" class="slot-input">
           <input type="text" id="captionSlot3" placeholder="Custom caption..." class="slot-caption">
+        </div>
+        <div class="photo-slot">
+          <h4>Memory #4 (Matching Screens)</h4>
+          <input type="file" id="fileSlot4" accept="image/*" class="slot-input">
+          <input type="text" id="captionSlot4" placeholder="Custom caption..." class="slot-caption">
         </div>
       </div>
 
       <div class="settings-actions">
-        <button type="button" class="btn btn-secondary" id="resetPhotosBtn">Reset to Illustrations</button>
+        <button type="button" class="btn btn-secondary" id="resetPhotosBtn">Reset to Default Images</button>
         <button type="button" class="btn btn-primary btn-glow" id="savePhotosBtn">Apply Real Photos ✨</button>
       </div>
     </div>
@@ -448,7 +576,7 @@
       <button class="modal-close" id="allReasonsCloseBtn" aria-label="Close list">✕</button>
       <div class="settings-header">
         <span class="icon">📖</span>
-        <h3 id="allReasonsTitle" class="modal-title">All 10 Reasons Why I Love You</h3>
+        <h3 id="allReasonsTitle" class="modal-title">All 10 Reasons Why I Love You (सारी 10 वजहें)</h3>
       </div>
       <div class="reasons-list-scroll" id="allReasonsList">
         <!-- Injected via script.js -->
@@ -457,7 +585,7 @@
   </div>
 
   <footer class="site-footer">
-    <p>Handcrafted with love for Khushi • Forever & Always</p>
+    <p>दिल से बनाया गया सिर्फ खुशी के लिए • Made with endless love • Forever & Always ♡</p>
   </footer>
 
   <!-- Scripts -->

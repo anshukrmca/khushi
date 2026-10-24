@@ -1,6 +1,6 @@
 /**
  * FOR KHUSHI, WITH LOVE ♡
- * Main Interactive Application Script
+ * Main Interactive Application Script with Hindi Poetry & Cute Panda Animations
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,106 +10,115 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
 
   const DEFAULT_DATA = {
+    version: '2.0', // Version bump to ensure new Hindi text & user photos load
     herName: 'Khushi',
-    authorName: 'With all my love ♡',
-    letterContent: `If you are reading this, I want you to take a gentle breath and know how deeply, completely, and endlessly cherished you are.
+    authorName: 'With all my love & heart ♡',
+    letterContent: `अगर तुम यह खत पढ़ रही हो, तो एक गहरी और सुकून भरी सांस लो और जान लो कि तुम इस दुनिया में मेरे लिए सबसे ज्यादा अनमोल और खास हो।
 
-From the moment you came into my life, everything took on a softer glow and a warmer melody. You have this rare and effortless grace—the way your eyes light up when you laugh, the kindness you show to everyone around you, and how even the most ordinary day turns extraordinary just because you are in it.
+जिस दिन से तुम मेरी जिंदगी में आई हो, हर सुबह और हसीन लगने लगी है। तुम्हारी वो प्यारी सी हंसी, तुम्हारी वो मासूम बातें और जिस तरह तुम मेरा ख्याल रखती हो—वो मेरे दिल को एक ऐसा सुकून देता है जो लफ्जों में कभी बयां नहीं हो सकता।
 
-Whenever the world feels loud or overwhelming, thinking of you is my instant peace. You are my comfort, my favorite laugh, and my safest home. I don't just love you for who you are; I love who I become when I am standing by your side.
+जब भी जिंदगी में कोई परेशानी या थकावट होती है, तुम्हारा एक बार प्यार से देख लेना या मुस्कुरा देना मेरी सारी तकलीफें मिटा देता है। तुम सिर्फ मेरी मोहब्बत नहीं हो, तुम मेरा सबसे महफूज घर (safe haven) हो।
 
-Thank you for being my constant warmth, my sweetest companion, and the reason my heart smiles without even trying. No matter where life takes us, I promise to celebrate you, protect your peace, and love you more with every passing sunrise.`,
+शुक्रिया मेरी जिंदगी को खुशियों से भरने के लिए, मुझे समझने के लिए, और मेरे साथ हर पल मुस्कुराने के लिए। मैं वादा करता हूँ कि आने वाले हर दिन, हर मौसम में तुम्हारा हाथ ऐसे ही थामे रखूँगा और तुम्हें दुनिया का सबसे खुश इंसान बनाऊँगा।`,
     memories: [
       {
-        src: 'assets/images/memory-01.jpg',
-        tag: '☕ Warm Cafe Afternoons',
-        title: 'Hands Held Across the Table',
-        text: 'The world outside was rushing, but right there, sipping warm coffee and looking into your eyes, everything felt completely still and peaceful.',
-        date: 'A day etched in my heart ♡'
+        src: 'assets/images/IMG_2495.png',
+        tag: '🎨 हमारी प्यारी कार्टून दुनिया • Dream Cafe',
+        title: 'लाल टेबल और ढेर सारी मीठी बातें',
+        text: 'सामने तुम बैठी हो, चेहरे पर वो प्यारी सी मुस्कान... इस कार्टून जैसी जादुई दुनिया में भी और असली जिंदगी में भी, तुम ही मेरी सबसे पसंदीदा साथी हो।',
+        date: 'Two hearts, infinite smiles ♡'
       },
       {
-        src: 'assets/images/memory-02.jpg',
-        tag: '🌅 Golden Hour Whispers',
-        title: 'Walking Beside the Waves',
-        text: 'Barefoot in the soft sand, the ocean glowing golden pink, with your laughter matching the rhythm of the waves. My happiest place is right next to you.',
-        date: 'Sunset memories with you ♡'
+        src: 'assets/images/ac279f4b-f24b-419d-b2a8-31da8d25d9c9.jpeg',
+        tag: '💛 मेरी खिली हुई धूप • Radiant Sunshine',
+        title: 'पीले लिबास में तुम्हारी वो मासूम अदा',
+        text: 'जब तुम इस तरह मुस्कुराती हो, तो जैसे चारों तरफ फूल खिल जाते हैं। तुम्हारी सादगी और नूर के आगे पूरी दुनिया की खूबसूरती फीकी है।',
+        date: 'Suraj ki pehli kiran jaisi ♡'
       },
       {
-        src: 'assets/images/memory-03.jpg',
-        tag: '✨ Under the Starlit Sky',
-        title: 'Counting Stars, Wishing on You',
-        text: 'Wrapped under a warm blanket with fairy lights dancing above. People search their whole lives for a falling star, but my wish already came true with you.',
-        date: 'Under the moonlight ♡'
+        src: 'assets/images/IMG_1822.jpeg',
+        tag: '🌹 सादगी और नजाकत • Pure Grace',
+        title: 'साड़ी में तुम्हारा वो दिलकश अंदाज',
+        text: 'तुम्हारी ये तस्वीर जब भी देखता हूँ, दिल की धड़कनें तेज हो जाती हैं। तुम्हारी सादगी में ही वो जादू है जो हर पल मुझे तुम्हारा दीवाना बना देता है।',
+        date: 'Kudrat ka sabse haseen tohfa ♡'
+      },
+      {
+        src: 'assets/images/IMG_1664.png',
+        tag: '📱 दो स्क्रीन, एक धड़कन • Linked Hearts',
+        title: 'स्क्रीन पर भी और दिल में भी सिर्फ तुम',
+        text: 'फोन की स्क्रीन अनलॉक हो या दिन का कोई भी पल, तुम्हारी तस्वीर देखते ही चेहरे पर एक सुकून भरी मुस्कान आ जाती है। हम हमेशा साथ हैं।',
+        date: 'Always by each other\'s side ♡'
       }
     ],
     reasons: [
       {
         icon: '🌸',
-        title: 'The Magic In Your Smile',
-        desc: 'Your genuine smile has this quiet superpower to turn my worst, most exhausting days into pure warmth in a split second.',
-        tag: '#MyFavoriteView'
+        title: 'तेरी वो जादुई मुस्कान (The Magic In Your Smile)',
+        desc: 'तुम्हारी एक सच्ची मुस्कान मेरे दिनभर की सारी थकान और उदासी को एक पल में मिटा देती है। तुम्हारी हंसी ही मेरा सबसे पसंदीदा सुकून है।',
+        tag: '#मेरीपसंदीदामुस्कान'
       },
       {
         icon: '🕊️',
-        title: 'Your Beautiful, Pure Heart',
-        desc: 'The genuine kindness and empathy you show to everyone around you inspires me every single day to be a better person.',
-        tag: '#PurestSoul'
+        title: 'तेरा मासूम और खूबसूरत दिल (Purest Soul)',
+        desc: 'जिस मासूमियत और अपनत्व से तुम सबका ख्याल रखती हो, वो मुझे हर दिन एक बेहतर इंसान बनने की प्रेरणा देता है।',
+        tag: '#नेकऔरमासूमदिल'
       },
       {
         icon: '☕',
-        title: 'Even Silence Feels Comfortable',
-        desc: 'We don’t even have to say a word. Just sitting in the same room with you, doing nothing at all, feels like the richest place in the world.',
-        tag: '#MyComfortZone'
+        title: 'तेरे साथ हर खामोशी भी मीठी है (Comfort in Silence)',
+        desc: 'हमें बात करने की भी जरूरत नहीं पड़ती। बस तुम्हारा मेरे पास बैठे होना ही पूरी दुनिया की सबसे बड़ी दौलत लगता है।',
+        tag: '#रूहकासुकून'
       },
       {
         icon: '🎶',
-        title: 'Your Cute Laughter',
-        desc: 'That uncontrollable, unfiltered giggle you get when something is genuinely hilarious is my absolute favorite sound in the universe.',
-        tag: '#MusicToMyEars'
+        title: 'तेरी वो खिलखिलाती हंसी (Unfiltered Laughter)',
+        desc: 'जब तुम किसी बात पर खुलकर हंसती हो, वो खिलखिलाहट मेरे कानों के लिए दुनिया का सबसे खूबसूरत संगीत बन जाती है।',
+        tag: '#कानोंमेंमिसरी'
       },
       {
         icon: '✨',
-        title: 'How You Believe In Me',
-        desc: 'When I doubt myself, the gentle faith you have in me gives me the strength to conquer whatever lies ahead.',
-        tag: '#MyBiggestCheerleader'
+        title: 'तेरा मुझ पर अटूट भरोसा (Your Faith In Me)',
+        desc: 'जब कभी मैं खुद पर शक करता हूँ, तुम्हारी आँखों का विश्वास मुझे हर मुश्किल से लड़ने की ताकत देता है।',
+        tag: '#मेरीहिम्मत'
       },
       {
         icon: '💫',
-        title: 'Ordinary Days Turn Special',
-        desc: 'A grocery run, waiting in traffic, or sharing a simple tea—everything becomes an adventure and a cherished memory with you.',
-        tag: '#MagicInTheEveryday'
+        title: 'आम दिनों को खास बना देना (Everyday Magic)',
+        desc: 'रास्ते की सैर हो या एक कप चाय, तुम्हारे साथ बिताया हर एक छोटा सा लम्हा जिंदगी भर की खूबसूरत याद बन जाता है।',
+        tag: '#जादुईलम्हे'
       },
       {
         icon: '🌙',
-        title: 'You Are My Safe Haven',
-        desc: 'No matter how chaotic or stormy life gets outside, in your presence I feel deeply understood, safe, and completely loved.',
-        tag: '#SafeHarbor'
+        title: 'मेरा सबसे महफूज ठिकाना (My Safe Harbor)',
+        desc: 'बाहर की दुनिया चाहे कितनी भी शोर भरी क्यों न हो, तुम्हारे पास आते ही मेरा दिल पूरी तरह शांत और महफूज महसूस करता है।',
+        tag: '#सुकूनकाशहर'
       },
       {
         icon: '🧸',
-        title: 'Your Adorable Quirks',
-        desc: 'The little habits, funny expressions, and unique ways you express excitement that are so uniquely, undeniably you.',
-        tag: '#EndlesslyCute'
+        title: 'तेरी प्यारी-प्यारी आदतें और नखरे (Adorable Quirks)',
+        desc: 'तुम्हारे बोलने का वो प्यारा अंदाज, वो छोटी-छोटी बातों पर मचलना और मुंह बनाना—तुम हर अंदाज में बेहद क्यूट हो।',
+        tag: '#क्यूटपांडा'
       },
       {
         icon: '💌',
-        title: 'How Much You Care',
-        desc: 'The gentle check-ins, the thoughtful questions, and the way you notice the little details nobody else ever does.',
-        tag: '#TreasuredMoments'
+        title: 'तेरा बेपनाह ख्याल रखना (The Way You Care)',
+        desc: 'खाना खाया या नहीं पूछना, तबियत का ख्याल रखना और वो छोटी-छोटी बातें नोटिस करना जो कोई और कभी नहीं देखता।',
+        tag: '#अनमोलपरवाह'
       },
       {
         icon: '💖',
-        title: 'Simply Because You Are You',
-        desc: 'Out of all 8 billion people, there is only one Khushi. You are irreplaceable, incomparable, and the greatest gift in my life.',
-        tag: '#MyOneAndOnly'
+        title: 'क्योंकि तुम सिर्फ तुम हो - मेरी खुशी (My One & Only)',
+        desc: '8 अरब लोगों में से सिर्फ एक तुम हो। तुम जैसी न कोई थी, न कोई होगी। तुम मेरी जिंदगी का सबसे अनमोल तोहफा हो खुशी।',
+        tag: '#मेरीपूरीकायनात'
       }
     ]
   };
 
-  // Load from local storage or fallback to defaults
+  // Check version to ensure new Hindi text & user's memory photos load
   let siteData = JSON.parse(localStorage.getItem('khushi_site_data') || 'null');
-  if (!siteData) {
+  if (!siteData || siteData.version !== DEFAULT_DATA.version) {
     siteData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+    saveSiteData();
   }
 
   function saveSiteData() {
@@ -117,7 +126,38 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   }
 
   // ==========================================================================
-  // 2. FLOATING PETALS & PARTICLES CANVAS
+  // 2. CUTE FLOATING PANDA WIDGET WITH HINDI SPEECH BUBBLE
+  // ==========================================================================
+
+  const floatingPanda = document.getElementById('floatingPanda');
+  const pandaBubble = document.getElementById('pandaBubble');
+  const hindiQuotes = [
+    'खुशी, तुम मेरी सबसे प्यारी मुस्कान हो! 💖',
+    'जैसे पांडा को बाम्बू, वैसे मुझे तुम पसंद हो! 🐼',
+    'तुम्हारी हंसी = मेरा पूरा दिन बन गया! 🌸',
+    'हाथ थामे रखना हमेशा, छोड़ना मत! 🤝',
+    'लाखों में एक नहीं, तुम मेरी पूरी दुनिया हो! 💫',
+    'आई लव यू सो मच, मेरी क्यूट खुशी! 🐾✨'
+  ];
+  let quoteIndex = 0;
+
+  if (floatingPanda && pandaBubble) {
+    floatingPanda.addEventListener('click', (e) => {
+      quoteIndex = (quoteIndex + 1) % hindiQuotes.length;
+      pandaBubble.innerHTML = `<span>${hindiQuotes[quoteIndex]}</span>`;
+      
+      // Spawn heart burst around the panda
+      const rect = floatingPanda.getBoundingClientRect();
+      spawnClickBurst(rect.left + 35, rect.top + 35);
+      
+      initAudioContext();
+      playWarmChime(659.25, 0.05); // High cute bell
+      playWarmChime(783.99, 0.15);
+    });
+  }
+
+  // ==========================================================================
+  // 3. FLOATING PETALS & PARTICLES CANVAS
   // ==========================================================================
 
   const canvas = document.getElementById('particles-canvas');
@@ -176,7 +216,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
       ctx.fillStyle = this.color;
 
       if (this.type === 'heart') {
-        // Draw delicate mini heart
         const s = this.size * 0.5;
         ctx.beginPath();
         ctx.moveTo(0, s * 0.3);
@@ -184,7 +223,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
         ctx.bezierCurveTo(s * 1.5, s * 0.5, s, -s * 0.5, 0, s * 0.3);
         ctx.fill();
       } else {
-        // Draw soft romantic rose petal
         ctx.beginPath();
         ctx.ellipse(0, 0, this.size * 0.5, this.size * 0.8, Math.PI / 4, 0, 2 * Math.PI);
         ctx.fill();
@@ -209,19 +247,18 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
 
   // Burst hearts on click
   window.addEventListener('click', (e) => {
-    // Only spawn particle burst if not clicking form inputs
     if (['INPUT', 'TEXTAREA', 'BUTTON'].includes(e.target.tagName)) return;
     spawnClickBurst(e.clientX, e.clientY);
   });
 
   function spawnClickBurst(x, y) {
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
       const p = new RomanticParticle();
       p.x = x;
       p.y = y;
-      p.speedX = (Math.random() - 0.5) * 4;
-      p.speedY = (Math.random() - 0.7) * 3;
-      p.size = Math.random() * 10 + 6;
+      p.speedX = (Math.random() - 0.5) * 4.5;
+      p.speedY = (Math.random() - 0.7) * 3.5;
+      p.size = Math.random() * 11 + 6;
       p.type = 'heart';
       particles.push(p);
       if (particles.length > 55) particles.shift();
@@ -229,7 +266,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   }
 
   // ==========================================================================
-  // 3. ROMANTIC SYNTHESIZER AUDIO (WEB AUDIO API + MP3 UPLOAD)
+  // 4. ROMANTIC SYNTHESIZER AUDIO (WEB AUDIO API + MP3 UPLOAD)
   // ==========================================================================
 
   let audioCtx = null;
@@ -242,7 +279,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   const musicDropdown = document.getElementById('musicDropdown');
   const customAudioInput = document.getElementById('customAudioInput');
 
-  // Ambient chord notes (Lofi Piano / Music box progression in F# Major / Db)
   const chordNotes = [
     [261.63, 329.63, 392.00, 493.88], // Cmaj7
     [220.00, 261.63, 329.63, 392.00], // Am7
@@ -269,7 +305,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
     osc.type = 'sine';
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime + delay);
 
-    // Warm low-pass filter
     filter.type = 'lowpass';
     filter.frequency.setValueAtTime(900, audioCtx.currentTime + delay);
 
@@ -288,10 +323,8 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   function playRomanticChord() {
     const chord = chordNotes[chordIndex];
     chord.forEach((freq, idx) => {
-      // Arpeggiate lightly for music-box feel
       playWarmChime(freq, idx * 0.18);
     });
-    // Add soft gentle high bell sparkle
     if (Math.random() > 0.3) {
       playWarmChime(chord[2] * 2, 0.7);
     }
@@ -332,12 +365,8 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
     }
   }
 
-  musicToggleBtn.addEventListener('click', (e) => {
-    // If clicking right side or double clicking, toggle dropdown
-    toggleMusic();
-  });
+  musicToggleBtn.addEventListener('click', toggleMusic);
 
-  // Long press / right click on music btn opens song upload dropdown
   musicToggleBtn.addEventListener('contextmenu', (e) => {
     e.preventDefault();
     musicDropdown.classList.toggle('show');
@@ -358,7 +387,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   });
 
   // ==========================================================================
-  // 4. ACTIVE SECTION TRACKER & NAVIGATION DOTS
+  // 5. ACTIVE SECTION TRACKER & NAVIGATION DOTS
   // ==========================================================================
 
   const sections = document.querySelectorAll('section');
@@ -385,7 +414,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   });
 
   // ==========================================================================
-  // 5. POLAROID GALLERY & LIGHTBOX MODAL
+  // 6. POLAROID GALLERY & LIGHTBOX MODAL
   // ==========================================================================
 
   const memoryCards = document.querySelectorAll('.polaroid-card');
@@ -427,7 +456,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   modalBackdrop.addEventListener('click', closePhotoModal);
 
   // ==========================================================================
-  // 6. INTERACTIVE 3D ENVELOPE & LOVE LETTER
+  // 7. INTERACTIVE 3D ENVELOPE & LOVE LETTER
   // ==========================================================================
 
   const envelopeBox = document.getElementById('envelopeBox');
@@ -438,10 +467,9 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   const letterAuthor = document.getElementById('letterAuthor');
 
   function updateLetterDOM() {
-    letterGreeting.textContent = `My Dearest ${siteData.herName},`;
+    letterGreeting.textContent = `My Dearest ${siteData.herName}, मेरी प्यारी खुशी,`;
     letterAuthor.textContent = siteData.authorName;
 
-    // Split letter content by paragraph
     const paras = siteData.letterContent.split('\n\n').filter(p => p.trim());
     letterBodyContent.innerHTML = paras.map(p => `<p>${p.trim()}</p>`).join('');
   }
@@ -460,7 +488,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
 
   function openLetter() {
     envelopeBox.classList.add('opened');
-    // Soft sound effect
     initAudioContext();
     playWarmChime(523.25, 0.05); // C5
     playWarmChime(659.25, 0.15); // E5
@@ -472,7 +499,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   });
 
   // ==========================================================================
-  // 7. REASONS WHY I LOVE YOU DECK & CAROUSEL
+  // 8. REASONS WHY I LOVE YOU DECK & CAROUSEL
   // ==========================================================================
 
   let currentReasonIndex = 0;
@@ -503,7 +530,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
       reasonDesc.textContent = item.desc;
       reasonTag.textContent = item.tag;
 
-      reasonCounterText.textContent = `Reason ${index + 1} of ${list.length}`;
+      reasonCounterText.textContent = `वजह #${index + 1} (Reason ${index + 1} of ${list.length})`;
       const percentage = Math.round(((index + 1) / list.length) * 100);
       reasonProgressFill.style.width = `${percentage}%`;
 
@@ -519,7 +546,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   nextReasonBtn.addEventListener('click', () => {
     currentReasonIndex = (currentReasonIndex + 1) % siteData.reasons.length;
     renderReason(currentReasonIndex);
-    // If reached last card, trigger mini celebration
     if (currentReasonIndex === siteData.reasons.length - 1) {
       spawnClickBurst(window.innerWidth / 2, window.innerHeight / 2);
     }
@@ -569,7 +595,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   });
 
   // ==========================================================================
-  // 8. FINALE SURPRISE: PLAYFUL RUNAWAY 'NO' & CELEBRATION
+  // 9. FINALE SURPRISE: PLAYFUL RUNAWAY 'NO' (MOBILE & DESKTOP) & CELEBRATION
   // ==========================================================================
 
   const noBtn = document.getElementById('noBtn');
@@ -578,10 +604,10 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   const celebrationBox = document.getElementById('celebrationBox');
   const replayCelebrationBtn = document.getElementById('replayCelebrationBtn');
 
-  // Playfully make "No" button dodge away
-  function dodgeButton() {
-    const maxX = 120;
-    const maxY = 50;
+  function dodgeButton(e) {
+    if (e) e.preventDefault();
+    const maxX = window.innerWidth < 600 ? 60 : 120;
+    const maxY = 45;
     const randomX = (Math.random() - 0.5) * maxX * 2;
     const randomY = (Math.random() - 0.5) * maxY * 2;
 
@@ -589,31 +615,26 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   }
 
   noBtn.addEventListener('mouseenter', dodgeButton);
-  noBtn.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    dodgeButton();
-  });
+  noBtn.addEventListener('touchstart', dodgeButton);
   noBtn.addEventListener('click', dodgeButton);
 
   yesBtn.addEventListener('click', () => {
     proposalBox.style.display = 'none';
     celebrationBox.classList.remove('hidden');
 
-    // Chime harmony
     initAudioContext();
     playWarmChime(523.25, 0.0);
     playWarmChime(659.25, 0.15);
     playWarmChime(783.99, 0.3);
     playWarmChime(1046.50, 0.45);
 
-    // Fire big celebration particle burst
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 35; i++) {
       setTimeout(() => {
         spawnClickBurst(
           Math.random() * window.innerWidth,
           Math.random() * window.innerHeight * 0.7
         );
-      }, i * 70);
+      }, i * 65);
     }
   });
 
@@ -629,7 +650,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   });
 
   // ==========================================================================
-  // 9. PERSONALIZATION SETTINGS MODAL
+  // 10. PERSONALIZATION SETTINGS MODAL
   // ==========================================================================
 
   const quickPersonalizeBtn = document.getElementById('quickPersonalizeBtn');
@@ -664,17 +685,17 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   personalizeForm.addEventListener('submit', (e) => {
     e.preventDefault();
     siteData.herName = inputHerName.value.trim() || 'Khushi';
-    siteData.authorName = inputYourName.value.trim() || 'With all my love ♡';
+    siteData.authorName = inputYourName.value.trim() || 'With all my love & heart ♡';
     siteData.letterContent = inputLetterText.value.trim() || DEFAULT_DATA.letterContent;
 
     saveSiteData();
     updateLetterDOM();
     closePersonalizeModal();
-    alert('Personalization saved successfully! 💖');
+    alert('बदलाव सेव हो गए! Personalization saved successfully 💖');
   });
 
   resetDefaultsBtn.addEventListener('click', () => {
-    if (confirm('Reset custom text back to original lovely defaults?')) {
+    if (confirm('वापस मूल सुंदर शब्दों पर रीसेट करें? Reset custom text to default?')) {
       siteData.herName = DEFAULT_DATA.herName;
       siteData.authorName = DEFAULT_DATA.authorName;
       siteData.letterContent = DEFAULT_DATA.letterContent;
@@ -685,7 +706,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   });
 
   // ==========================================================================
-  // 10. REAL PHOTO MANAGER MODAL
+  // 11. REAL PHOTO MANAGER MODAL
   // ==========================================================================
 
   const managePhotosBtn = document.getElementById('managePhotosBtn');
@@ -698,17 +719,21 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   const fileSlots = [
     document.getElementById('fileSlot1'),
     document.getElementById('fileSlot2'),
-    document.getElementById('fileSlot3')
+    document.getElementById('fileSlot3'),
+    document.getElementById('fileSlot4')
   ];
   const captionSlots = [
     document.getElementById('captionSlot1'),
     document.getElementById('captionSlot2'),
-    document.getElementById('captionSlot3')
+    document.getElementById('captionSlot3'),
+    document.getElementById('captionSlot4')
   ];
 
   function openPhotoManager() {
     captionSlots.forEach((slot, i) => {
-      slot.value = siteData.memories[i] ? siteData.memories[i].text : '';
+      if (slot) {
+        slot.value = siteData.memories[i] ? siteData.memories[i].text : '';
+      }
     });
     photoManagerModal.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -723,7 +748,6 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   photoMgrCloseBtn.addEventListener('click', closePhotoManager);
   photoMgrBackdrop.addEventListener('click', closePhotoManager);
 
-  // Helper to read file as DataURL
   function readFileAsDataURL(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -735,24 +759,29 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
 
   savePhotosBtn.addEventListener('click', async () => {
     for (let i = 0; i < fileSlots.length; i++) {
+      if (!fileSlots[i]) continue;
       const file = fileSlots[i].files[0];
       if (file) {
         try {
           const dataUrl = await readFileAsDataURL(file);
-          siteData.memories[i].src = dataUrl;
+          if (siteData.memories[i]) {
+            siteData.memories[i].src = dataUrl;
+          }
         } catch (err) {
           console.error('Error reading file:', err);
         }
       }
-      if (captionSlots[i].value.trim()) {
-        siteData.memories[i].text = captionSlots[i].value.trim();
+      if (captionSlots[i] && captionSlots[i].value.trim()) {
+        if (siteData.memories[i]) {
+          siteData.memories[i].text = captionSlots[i].value.trim();
+        }
       }
     }
 
     saveSiteData();
     applyPhotosToDOM();
     closePhotoManager();
-    alert('Photos updated! 📸✨');
+    alert('तस्वीरें अपडेट हो गईं! Photos updated! 📸✨');
   });
 
   function applyPhotosToDOM() {
@@ -770,7 +799,7 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
   applyPhotosToDOM();
 
   resetPhotosBtn.addEventListener('click', () => {
-    if (confirm('Reset back to original dream illustrations?')) {
+    if (confirm('तस्वीरें रीसेट करें? Reset back to original memory images?')) {
       siteData.memories = JSON.parse(JSON.stringify(DEFAULT_DATA.memories));
       saveSiteData();
       applyPhotosToDOM();
@@ -778,13 +807,13 @@ Thank you for being my constant warmth, my sweetest companion, and the reason my
     }
   });
 
-  // Esc key closes any open modal
+  // Escape key closes modals
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closePhotoModal();
       closePersonalizeModal();
       closePhotoManager();
-      allReasonsModal.hidden = true;
+      if (allReasonsModal) allReasonsModal.hidden = true;
       document.body.style.overflow = '';
     }
   });
