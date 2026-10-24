@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Khushi ♡ — A Little Surprise For You</title>
+  <meta name="description" content="A romantic personal gift website created with love for Khushi. Celebrating our beautiful memories, heartfelt letters, and endless reasons to love you.">
+  <meta name="theme-color" content="#fff0f3">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Interactive Floating Petals & Hearts Background Canvas -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Audio Floating Controller -->
+  <div class="music-pill" id="musicControl" role="region" aria-label="Music Player">
+    <button class="music-btn" id="musicToggleBtn" aria-label="Play soft romantic melody" title="Play soft romantic music">
+      <span class="music-icon" id="musicIcon">🎵</span>
+      <span class="music-label" id="musicLabel">Play Music</span>
+      <span class="sound-wave" id="soundWave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </button>
+    <div class="music-dropdown" id="musicDropdown">
+      <div class="music-mode-info">
+        <p class="track-title">🎶 Lofi Romantic Music Box</p>
+        <span class="track-sub">Synthesized ambient piano chords</span>
+      </div>
+      <div class="audio-custom-input">
+        <label for="customAudioInput" class="upload-link">Upload favorite song (.mp3)</label>
+        <input type="file" id="customAudioInput" accept="audio/*" style="display: none;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <nav class="side-nav" aria-label="Page navigation">
+    <a href="#welcome" class="nav-dot active" data-title="Welcome" aria-label="Go to Welcome section"></a>
+    <a href="#memories" class="nav-dot" data-title="Memories" aria-label="Go to Memories section"></a>
+    <a href="#letter" class="nav-dot" data-title="Love Letter" aria-label="Go to Love Letter section"></a>
+    <a href="#reasons" class="nav-dot" data-title="Why I Love You" aria-label="Go to Reasons section"></a>
+    <a href="#surprise" class="nav-dot" data-title="Forever Promise" aria-label="Go to Final Surprise section"></a>
+  </nav>
+
+  <!-- Main Content Wrapper -->
+  <main class="page-container">
+
+    <!-- ==============================================
+         SECTION 1: WELCOME / SURPRISE HERO
+         ============================================== -->
+    <section id="welcome" class="hero-section" aria-labelledby="welcome-title">
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="sparkle">✨</span>
+          <span>A little surprise crafted just for you</span>
+          <span class="sparkle">✨</span>
+        </div>
+
+        <h1 id="welcome-title" class="hero-title">
+          For My <span class="highlight-text script-font">Khushi</span>
+          <span class="heart-pulse">♡</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          In a world full of ordinary things, you are my most magical story. I made this little universe just to remind you how deeply you are loved.
+        </p>
+
+        <!-- Cute Relationship Milestone / Live Sparkle Clock -->
+        <div class="love-counter-card glass-panel">
+          <div class="counter-header">
+            <span class="counter-icon">⏳</span>
+            <span class="counter-title">Every single moment with you is precious</span>
+          </div>
+          <div class="counter-grid">
+            <div class="counter-item">
+              <span class="counter-number" id="daysCount">∞</span>
+              <span class="counter-unit">Days of Warmth</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-number" id="smilesCount">10,000+</span>
+              <span class="counter-unit">Smiles Caused</span>
+            </div>
+            <div class="counter-item">
+              <span class="counter-number" id="lovePercent">100%</span>
+              <span class="counter-unit">My Whole Heart</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#memories" class="btn btn-primary btn-glow" id="openSurpriseBtn">
+            <span>Open Your Surprise</span>
+            <span class="btn-arrow">💌</span>
+          </a>
+          <button class="btn btn-secondary" id="quickPersonalizeBtn" title="Personalize details for Khushi">
+            <span>⚙️ Personalize</span>
+          </button>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="scroll-cue">
+          <span>Scroll to uncover the love</span>
+          <div class="scroll-arrow">↓</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 2: MEMORIES GALLERY
+         ============================================== -->
+    <section id="memories" class="section memories-section" aria-labelledby="memories-title">
+      <div class="section-header">
+        <span class="section-tag">Cherished Moments</span>
+        <h2 id="memories-title" class="section-title">Our Little World of Memories</h2>
+        <p class="section-desc">Every smile, every glance, and every quiet laughter with you lives forever in my heart.</p>
+      </div>
+
+      <div class="polaroid-gallery" id="memoryGallery">
+        <!-- Polaroid Card 1 -->
+        <article class="polaroid-card" tabindex="0" data-index="0">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="polaroid-img-wrap">
+            <img src="assets/images/memory-01.jpg" alt="Cozy coffee date holding hands with Khushi" class="polaroid-img" loading="lazy">
+            <button class="expand-btn" aria-label="View photo larger">🔍</button>
+          </div>
+          <div class="polaroid-caption">
+            <span class="memory-tag">☕ Warm Cafe Afternoons</span>
+            <h3 class="memory-title">Hands Held Across the Table</h3>
+            <p class="memory-text">The world outside was rushing, but right there, sipping warm coffee and looking into your eyes, everything felt completely still and peaceful.</p>
+            <span class="memory-date">A day etched in my heart ♡</span>
+          </div>
+        </article>
+
+        <!-- Polaroid Card 2 -->
+        <article class="polaroid-card" tabindex="0" data-index="1">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="polaroid-img-wrap">
+            <img src="assets/images/memory-02.jpg" alt="Romantic sunset walk on the beach with Khushi" class="polaroid-img" loading="lazy">
+            <button class="expand-btn" aria-label="View photo larger">🔍</button>
+          </div>
+          <div class="polaroid-caption">
+            <span class="memory-tag">🌅 Golden Hour Whispers</span>
+            <h3 class="memory-title">Walking Beside the Waves</h3>
+            <p class="memory-text">Barefoot in the soft sand, the ocean glowing golden pink, with your laughter matching the rhythm of the waves. My happiest place is right next to you.</p>
+            <span class="memory-date">Sunset memories with you ♡</span>
+          </div>
+        </article>
+
+        <!-- Polaroid Card 3 -->
+        <article class="polaroid-card" tabindex="0" data-index="2">
+          <div class="tape-strip" aria-hidden="true"></div>
+          <div class="polaroid-img-wrap">
+            <img src="assets/images/memory-03.jpg" alt="Cozy night stargazing together under fairy lights" class="polaroid-img" loading="lazy">
+            <button class="expand-btn" aria-label="View photo larger">🔍</button>
+          </div>
+          <div class="polaroid-caption">
+            <span class="memory-tag">✨ Under the Starlit Sky</span>
+            <h3 class="memory-title">Counting Stars, Wishing on You</h3>
+            <p class="memory-text">Wrapped under a warm blanket with fairy lights dancing above. People search their whole lives for a falling star, but my wish already came true with you.</p>
+            <span class="memory-date">Under the moonlight ♡</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Add Your Own Photos Action Banner -->
+      <div class="custom-photo-bar glass-panel">
+        <div class="custom-photo-text">
+          <span class="icon">📷</span>
+          <span>Want to replace these with your own real photos of you & Khushi?</span>
+        </div>
+        <button class="btn btn-sm btn-outline" id="managePhotosBtn">Upload Real Photos</button>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 3: A HEARTFELT LETTER FOR KHUSHI
+         ============================================== -->
+    <section id="letter" class="section letter-section" aria-labelledby="letter-title">
+      <div class="section-header">
+        <span class="section-tag">Straight From The Heart</span>
+        <h2 id="letter-title" class="section-title">A Letter Written Just For You</h2>
+        <p class="section-desc">Some words are meant to be kept close to the heart. Tap the wax seal to unseal it.</p>
+      </div>
+
+      <div class="envelope-stage">
+        <!-- Interactive 3D Envelope -->
+        <div class="envelope-box" id="envelopeBox" role="button" tabindex="0" aria-label="Click to open or close love letter envelope">
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          <div class="envelope-pocket"></div>
+          
+          <!-- Wax Seal Button -->
+          <div class="wax-seal" id="waxSeal" title="Tap to unseal the letter">
+            <div class="seal-inner">
+              <span class="seal-letter">K</span>
+              <span class="seal-heart">♡</span>
+            </div>
+            <div class="seal-tooltip">Click to Open 💌</div>
+          </div>
+
+          <!-- Letter Paper (Slides out and expands) -->
+          <div class="letter-sheet" id="letterSheet">
+            <div class="letter-inner">
+              <div class="letter-decor-top">❦ ❧</div>
+              <h3 class="letter-greeting script-font" id="letterSalutation">My Dearest Khushi,</h3>
+              
+              <div class="letter-body" id="letterBodyContent">
+                <p>
+                  If you are reading this, I want you to take a gentle breath and know how deeply, completely, and endlessly cherished you are.
+                </p>
+                <p>
+                  From the moment you came into my life, everything took on a softer glow and a warmer melody. You have this rare and effortless grace—the way your eyes light up when you laugh, the kindness you show to everyone around you, and how even the most ordinary day turns extraordinary just because you are in it.
+                </p>
+                <p>
+                  Whenever the world feels loud or overwhelming, thinking of you is my instant peace. You are my comfort, my favorite laugh, and my safest home. I don't just love you for who you are; I love who I become when I am standing by your side.
+                </p>
+                <p>
+                  Thank you for being my constant warmth, my sweetest companion, and the reason my heart smiles without even trying. No matter where life takes us, I promise to celebrate you, protect your peace, and love you more with every passing sunrise.
+                </p>
+              </div>
+
+              <div class="letter-signature">
+                <p class="sign-off">Forever and always yours,</p>
+                <p class="sign-name script-font" id="letterAuthor">With all my love ♡</p>
+              </div>
+
+              <div class="letter-actions">
+                <button class="btn btn-sm btn-outline" id="editLetterBtn">✏️ Edit Words</button>
+                <button class="btn btn-sm btn-secondary" id="foldLetterBtn">Close Letter ✉️</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 4: REASONS I LOVE YOU
+         ============================================== -->
+    <section id="reasons" class="section reasons-section" aria-labelledby="reasons-title">
+      <div class="section-header">
+        <span class="section-tag">Every Little Thing</span>
+        <h2 id="reasons-title" class="section-title">Reasons Why My Heart Chose You</h2>
+        <p class="section-desc">There are thousands of reasons, but here are some of the sweetest ones.</p>
+      </div>
+
+      <div class="reasons-carousel-container">
+        <!-- Floating Heart Counter -->
+        <div class="card-progress-bar">
+          <span class="progress-label" id="reasonCounterText">Reason 1 of 10</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="reasonProgressFill" style="width: 10%;"></div>
+          </div>
+        </div>
+
+        <!-- The Interactive Reason Card -->
+        <div class="reason-card-deck">
+          <div class="reason-card glass-panel" id="reasonActiveCard">
+            <div class="card-top-icon" id="reasonIcon">🌸</div>
+            <span class="card-number-badge" id="reasonBadge">Reason #1</span>
+            <h3 class="card-reason-title" id="reasonTitle">The Magic In Your Smile</h3>
+            <p class="card-reason-body" id="reasonDescription">
+              Your genuine smile has this quiet superpower to turn my worst, most exhausting days into pure warmth in a split second.
+            </p>
+            <div class="card-tag" id="reasonTag">#MyFavoriteView</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="reason-controls">
+          <button class="btn btn-circle" id="prevReasonBtn" aria-label="Previous reason" title="Previous reason">←</button>
+          <button class="btn btn-primary btn-glow" id="nextReasonBtn">
+            <span>Show Me Another Reason</span>
+            <span>✨</span>
+          </button>
+          <button class="btn btn-circle" id="shuffleReasonBtn" aria-label="Random reason" title="Random reason">🔀</button>
+        </div>
+
+        <!-- Little Interactive Love Jar / Add Your Own Reason -->
+        <div class="reasons-footer-action">
+          <button class="text-link" id="viewAllReasonsBtn">📜 View all reasons in a sweet list</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         SECTION 5: FINAL SURPRISE & FOREVER PROMISE
+         ============================================== -->
+    <section id="surprise" class="section finale-section" aria-labelledby="finale-title">
+      <div class="finale-glow-sphere" aria-hidden="true"></div>
+
+      <div class="finale-card glass-panel">
+        <div class="finale-heart-wrap">
+          <div class="beating-heart" id="beatingHeart">💖</div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring delay-1"></div>
+        </div>
+
+        <span class="section-tag">A Promise For Forever</span>
+        <h2 id="finale-title" class="finale-title script-font">
+          "If I could choose again, I would still choose you."
+        </h2>
+
+        <p class="finale-message">
+          Out of 8 billion people on this spinning earth, meeting you will always be the most beautiful chapter of my life. 
+          No distance, no passage of time, and no stormy weather could ever change how proud and grateful I am to have you.
+        </p>
+
+        <!-- Cute Interactive Question / Proposal -->
+        <div class="interactive-proposal" id="proposalBox">
+          <h3 class="proposal-question">Will you promise to always stay by my side, Khushi?</h3>
+          <div class="proposal-buttons" id="proposalBtnGroup">
+            <button class="btn btn-primary btn-glow btn-lg" id="yesBtn">
+              <span>Yes! Forever and Always 💖</span>
+            </button>
+            <button class="btn btn-secondary btn-runaway" id="noBtn">
+              <span>No 🙈</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hidden Celebration Message (reveals after YES!) -->
+        <div class="celebration-box hidden" id="celebrationBox">
+          <div class="celebration-stars">🎉 💐 💍 🥂 💖</div>
+          <h3 class="celebration-title script-font">You Just Made Me The Happiest!</h3>
+          <p class="celebration-desc">
+            I love you endlessly, Khushi! Today, tomorrow, and every lifetime after.
+          </p>
+          <button class="btn btn-sm btn-outline" id="replayCelebrationBtn">Shower More Love 🎊</button>
+        </div>
+
+        <div class="finale-signature">
+          <div class="divider-rose">❦ ❀ ❦</div>
+          <p class="crafted-tag">Made with endless love, just for Khushi ♡</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       PHOTO MODAL (IMAGE LIGHTBOX)
+       ============================================== -->
+  <div class="modal" id="photoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content glass-panel">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close photo preview">✕</button>
+      <div class="modal-img-container">
+        <img src="" alt="Enlarged memory photo" id="modalImg" class="modal-img">
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalDesc" class="modal-desc"></p>
+        <span id="modalDate" class="modal-date"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       PERSONALIZATION SETTINGS MODAL
+       ============================================== -->
+  <div class="modal" id="personalizeModal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle" hidden>
+    <div class="modal-backdrop" id="settingsBackdrop"></div>
+    <div class="modal-content modal-form glass-panel">
+      <button class="modal-close" id="settingsCloseBtn" aria-label="Close settings">✕</button>
+      <div class="settings-header">
+        <span class="icon">✨</span>
+        <h3 id="settingsTitle" class="modal-title">Personalize This Gift</h3>
+        <p class="modal-desc">Easily customize the names, nicknames, and memories saved directly to your browser!</p>
+      </div>
+
+      <form id="personalizeForm" class="settings-form">
+        <div class="form-group">
+          <label for="inputHerName">Her Name / Nickname</label>
+          <input type="text" id="inputHerName" value="Khushi" required placeholder="e.g. Khushi, My Angel, Cutie">
+        </div>
+
+        <div class="form-group">
+          <label for="inputYourName">Your Signature / Name</label>
+          <input type="text" id="inputYourName" value="With all my love ♡" required placeholder="e.g. Yours Always, [Your Name]">
+        </div>
+
+        <div class="form-group">
+          <label for="inputLetterText">Heartfelt Letter Content</label>
+          <textarea id="inputLetterText" rows="6" placeholder="Write your own custom letter..."></textarea>
+        </div>
+
+        <div class="settings-actions">
+          <button type="button" class="btn btn-secondary" id="resetDefaultsBtn">Reset to Default</button>
+          <button type="submit" class="btn btn-primary btn-glow">Save Changes 💖</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       PHOTO MANAGER MODAL
+       ============================================== -->
+  <div class="modal" id="photoManagerModal" role="dialog" aria-modal="true" aria-labelledby="photoMgrTitle" hidden>
+    <div class="modal-backdrop" id="photoMgrBackdrop"></div>
+    <div class="modal-content modal-form glass-panel">
+      <button class="modal-close" id="photoMgrCloseBtn" aria-label="Close photo manager">✕</button>
+      <div class="settings-header">
+        <span class="icon">📸</span>
+        <h3 id="photoMgrTitle" class="modal-title">Customize Memory Photos</h3>
+        <p class="modal-desc">Upload real pictures from your device to replace the memory cards instantly.</p>
+      </div>
+
+      <div class="photo-slots-grid">
+        <div class="photo-slot">
+          <h4>Memory #1 (Cafe Date)</h4>
+          <input type="file" id="fileSlot1" accept="image/*" class="slot-input">
+          <input type="text" id="captionSlot1" placeholder="Custom caption..." class="slot-caption">
+        </div>
+        <div class="photo-slot">
+          <h4>Memory #2 (Sunset Walk)</h4>
+          <input type="file" id="fileSlot2" accept="image/*" class="slot-input">
+          <input type="text" id="captionSlot2" placeholder="Custom caption..." class="slot-caption">
+        </div>
+        <div class="photo-slot">
+          <h4>Memory #3 (Stargazing)</h4>
+          <input type="file" id="fileSlot3" accept="image/*" class="slot-input">
+          <input type="text" id="captionSlot3" placeholder="Custom caption..." class="slot-caption">
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button type="button" class="btn btn-secondary" id="resetPhotosBtn">Reset to Illustrations</button>
+        <button type="button" class="btn btn-primary btn-glow" id="savePhotosBtn">Apply Real Photos ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       ALL REASONS LIST MODAL
+       ============================================== -->
+  <div class="modal" id="allReasonsModal" role="dialog" aria-modal="true" aria-labelledby="allReasonsTitle" hidden>
+    <div class="modal-backdrop" id="allReasonsBackdrop"></div>
+    <div class="modal-content modal-large glass-panel">
+      <button class="modal-close" id="allReasonsCloseBtn" aria-label="Close list">✕</button>
+      <div class="settings-header">
+        <span class="icon">📖</span>
+        <h3 id="allReasonsTitle" class="modal-title">All 10 Reasons Why I Love You</h3>
+      </div>
+      <div class="reasons-list-scroll" id="allReasonsList">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Handcrafted with love for Khushi • Forever & Always</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>
